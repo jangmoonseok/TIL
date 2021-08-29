@@ -24,3 +24,19 @@
 ul태그가 부모요소 li태그가 자식요소
 부모 자식을 구분하기위해 li태그에 들여쓰기 사용
 ```
+HTML 문서의 구조
+----------------
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- HEAD 영역 -->
+    </head>
+    <body>
+        <!-- BODY 영역 -->
+    </body>
+</html>
+```
+
+* ```<!DOCTYPE html>```
+
