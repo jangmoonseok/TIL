@@ -61,3 +61,17 @@ HTML 문서의 구조
   * 대부분의 블록 요소는 다른 인라인 요소도 포함할 수 있다
   * 인라인 요소는 블록 요소를 포함할 수 없다.
 ```
+
+콘텐츠 카테고리
+-------------
+* HTML 5 부터 비슷한 특징을 가진 요소끼리 묶어서 7가지 카테고리로 세분화
+* 하나의 HTML 요소가 여러 콘텐츠 카테고리 내의 포함관계에 들어갈 수 있다.
+![image](https://user-images.githubusercontent.com/64582209/131241375-fb0ac4a7-d71e-43d2-9a07-0b4dbebd543a.png)
+
+1. 플로우 콘텐츠(Flow content) : 메타데이터를 제외하고 body태그에 들어가는 거의 모든 요소를 포함
+2. 메타데이터 콘텐츠(Metadata content) : 문서의 메타 데이터(정보), 다른 문서를 가리키는 링크들을 나타내는 요소
+3. 섹션 콘텐츠(Section content) : 웹 문서의 구획(Section)을 나눌 때 사용
+4. 헤딩 콘텐츠(Heading content) : 섹션의 제목(heading)과 관련된 요소
+5. 프레이징 콘텐츠(Phrasing content) : 문단에서 텍스트를 마크업 할 때 사용
+6. 임베디드 콘텐츠(Embadded content) : 이미지, 비디오 등 외부 소스를 가져오거나 삽입할 때 사용되는 요소
+7. 인터렉티브 콘텐츠(Interactive content) : 사용자와의 상호작용을 위한 컨텐츠 요소
