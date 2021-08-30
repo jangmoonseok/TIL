@@ -8,3 +8,4 @@ Today I Learned
     * [HTML개요](https://github.com/jangmoonseok/TIL/blob/main/HTML/HTML%EA%B0%9C%EC%9A%94.md)
     * [HTML이란?](https://github.com/jangmoonseok/TIL/blob/main/HTML/HTML%EC%9D%B4%EB%9E%80%3F.md)
     * [메타데이터요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9A%94%EC%86%8C.md)
+    * [텍스트요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9A%94%EC%86%8C.md)
