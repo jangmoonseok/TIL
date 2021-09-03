@@ -83,8 +83,60 @@ HTML 요소, 속성만 사용가능 합니다. (단 style, script 관련 태그,
 1. <table> 요소와 그 하위 셀 요소를 활용해보세요. 
 2. <tbody> <thead>와 같은 태그를 활용해 웹접근성을 높여보세요 3. colspan, rowspan 속성 을 사용하여 복잡한 표를 표현해보세요. 
 [문제]  
-
-HTML 을 사용하여 다음 표를 만드시오.
-
 ```
 ![캡처](https://user-images.githubusercontent.com/64582209/132011913-f717f536-f544-472e-a78d-59b21fb56bfc.PNG)
+```
+답 :
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">/</th>
+                <th colspan="2">반기</th>
+                <th rowspan="2">합계</th>
+                <th rowspan="2">비고</th>
+            </tr>
+            <tr>
+                <th>전반기</th>
+                <th>후반기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>2019</th>
+                <td>10억</td>
+                <td>20억</td>
+                <td>30억</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>2020</th>
+                <td>22억</td>
+                <td>33억</td>
+                <td>55억</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <th>2021</th>
+                <td colspan="2">집계중</td>
+                <td>집계중</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+```
+
+## 5번
+
+```
+[문제 설명] 
+HTML <i>, <sub>, <sup> 그리고 선택적으로 <var> 태그에 대해 이해하고 있는지 확 인해보는 문제입니다. 
+[제한 사항] 
+1. HTML 요소, 속성만 사용가능 합니다. (단 style, script 관련 태그, 속성 사용금 지) 
+2. 수식 중 적분기호(∫) t 와 log 문자에는 기울임이 적용되어야 합니다. 
+[가이드라인] 
+1. <i> 태그 혹은 <var> 태그를 사용해 기울임을 나타내 봅시다. 
+2. <sub>, <sup> 태그를 사용해 윗 첨자, 아랫 첨자를 표시해봅시다. [문제]  
+
+다음 수식을 HTML 만 사용하여 표현해 봅시다.
+```
