@@ -85,5 +85,6 @@ HTML 요소, 속성만 사용가능 합니다. (단 style, script 관련 태그,
 [문제]  
 
 HTML 을 사용하여 다음 표를 만드시오.
-![캡처](https://user-images.githubusercontent.com/64582209/132011913-f717f536-f544-472e-a78d-59b21fb56bfc.PNG)
+
 ```
+![캡처](https://user-images.githubusercontent.com/64582209/132011913-f717f536-f544-472e-a78d-59b21fb56bfc.PNG)
