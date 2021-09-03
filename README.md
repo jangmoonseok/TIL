@@ -13,3 +13,4 @@ Today I Learned
     * [목록과 표](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EB%AA%A9%EB%A1%9D%EA%B3%BC%20%ED%91%9C.md)
     * [임베디드 요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C%EC%9A%94%EC%86%8C.md)
     * [폼 요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%ED%8F%BC%EC%9A%94%EC%86%8C.md)
+    * [전역특성](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EC%A0%84%EC%97%AD%ED%8A%B9%EC%84%B1.md)
