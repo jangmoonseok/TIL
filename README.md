@@ -20,5 +20,5 @@ Today I Learned
    * [선택자의 종류](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EC%84%A0%ED%83%9D%EC%9E%90(%EC%85%80%EB%A0%89%ED%84%B0).md)
    * [폰트 관련 속성](https://github.com/jangmoonseok/TIL/blob/main/CSS/%ED%8F%B0%ED%8A%B8%EA%B4%80%EB%A0%A8%EC%86%8D%EC%84%B1.md)
    * [단위와 값](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EB%8B%A8%EC%9C%84%EC%99%80%EA%B0%92.md)
-* 연습문제
+* 연습문제 및 
    * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
