@@ -48,5 +48,6 @@
   transform: scale(1.5);
 }
 ```
-![GIF 2021-09-12 오후 1-54-19](https://user-images.githubusercontent.com/64582209/132972740-b1e87db7-58ae-4358-ba7b-332f8a8c1258.gif)
+![GIF 2021-09-12 오후 1-57-33](https://user-images.githubusercontent.com/64582209/132972798-bf299676-51f5-4c38-8798-29a38f8e0669.gif)
+
 * transition-property : all, transition-timing-function : linear, transition-duration : 1s
