@@ -24,5 +24,6 @@ Today I Learned
    * [색상과 배경](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EC%83%89%EC%83%81%EA%B3%BC%EB%B0%B0%EA%B2%BD.md)
    * [transform](https://github.com/jangmoonseok/TIL/blob/main/CSS/transform.md)
    * [transition](https://github.com/jangmoonseok/TIL/blob/main/CSS/transition.md)
+   * [애니메이션](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98.md)
 * 연습문제 및 개인공부
    * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
