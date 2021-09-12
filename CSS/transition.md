@@ -18,3 +18,35 @@
 * ease-out : 빠르게 시작해서 점점 느려진다.
 * ease-in-out : 천천히 시작해서 빨라졌다가 다시 느려진다.
 * linear : 일정한 속도로 변환한다.
+
+```
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: all 1s;
+}
+
+.box:hover {
+  background-color: aqua;
+  height: 200px;
+}
+```
+![GIF 2021-09-12 오후 1-52-19](https://user-images.githubusercontent.com/64582209/132972712-8c024251-bcf1-4307-8d98-2e438f280583.gif)
+* transition-property : all, transition-duration : 1s
+
+```
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: all linear 1s;
+}
+
+.box:hover {
+  background-color: aqua;
+  transform: scale(1.5);
+}
+```
+![GIF 2021-09-12 오후 1-54-19](https://user-images.githubusercontent.com/64582209/132972740-b1e87db7-58ae-4358-ba7b-332f8a8c1258.gif)
+* transition-property : all, transition-timing-function : linear, transition-duration : 1s
