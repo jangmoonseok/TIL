@@ -27,3 +27,67 @@
 
 ## flex-flow
 * flex-direction과 flex-wrap을 합친 단축 속성
+
+## 2. flex-item에 사용하는 속성
+
+### order
+* 플렉스 또는 그리드 컨테이너 안에 요소의 순서를 지정한다.
+* 정렬은 오름차순이고, order값이 같은 요소는 코드 순서에따라 배치된다.
+* 기본 값은 0으로 정수만 사용가능하다.
+
+### flex-grow
+* flex-item요소를 flex-container요소 내부에 할당 가능한 공간의 정도를 선언한다.
+* 형제 요소인 item이 모두 같은 값을 같는다면 동일한 공간을 할당 받고, 각자 다른 값을 같는다면 그에 따라 다른 공간을 할당 받는다.
+
+### flex-shrink
+* flex-item요소의 크기가 flex-container요소의 크기보다 클 때 설정된 숫자 값에 따라 flex-item의 요소의 크기가 축소된다.
+
+```
+.container {
+  height: 200px;
+  border: 2px solid greenyellow;
+  display: flex;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: blue;
+  border: 1px solid skyblue;
+}
+
+.item:nth-child(1) {
+  flex-grow: 1;
+}
+.item:nth-child(2) {
+  flex-grow: 2;
+}
+.item:nth-child(3) {
+  flex-grow: 3;
+}
+```
+![image](https://user-images.githubusercontent.com/64582209/133068911-0a063b47-b5b8-4df5-b890-a71a4cd7d779.png)
+* item요소의 크기가 원래 크기일때 남은 빈 공간을 1:2:3비율로 나누어가진다.
+
+```
+.item {
+  width: 300px;
+  height: 50px;
+  margin: 5px;
+  background-color: blue;
+  border: 1px solid skyblue;
+}
+
+.item:nth-child(1) {
+  flex-shrink: 1;
+}
+.item:nth-child(2) {
+  flex-shrink: 2;
+}
+.item:nth-child(3) {
+  flex-shrink: 3;
+}
+```
+![GIF 2021-09-13 오후 7-35-41](https://user-images.githubusercontent.com/64582209/133069436-7bd013a2-b642-4564-92a9-56c2f207cb2b.gif)
+* item요소의 크기보다 container의 크기가 작아지면서 값이 제일큰 3번째 자식이 제일 많이 줄어들도 두번째로 값이 큰 2번째 자식이 그다음 줄어들고 첫번째 자식은 기본값이므로 
