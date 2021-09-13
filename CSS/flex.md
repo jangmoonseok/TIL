@@ -6,7 +6,7 @@
 * 교차축 : 주축과 수직하는 축
 * flex-container : flexbox영역 내에 있는 컨테이너 요소의 display속성을 flex 또는 inlien-flex라고 지정하면 생성되며, 이 컨테이너의 일차 자식요소들은 flex항목이 된다.
 
-## container에 사용하는 속성들
+## 1. container에 사용하는 속성들
 ## display
 * flex-container로 지정할 요소에 사용한다
 * inline-flex : 컨테이너 바깥쪽 요소와의 관계는 inline , 컨테이너 내부 요소들은 flex항목으로 지정한다.
