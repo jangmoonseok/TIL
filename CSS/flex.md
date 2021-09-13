@@ -91,3 +91,46 @@
 ```
 ![GIF 2021-09-13 오후 7-35-41](https://user-images.githubusercontent.com/64582209/133069436-7bd013a2-b642-4564-92a9-56c2f207cb2b.gif)
 * item요소의 크기보다 container의 크기가 작아지면서 값이 제일큰 3번째 자식부터 순서대로 줄어든다
+
+### flex-basis
+* flex-item의 초기 크기를 지정한다.
+* box-sizing을 따로 지정하지 않는다면 콘텐츠 박스의 크기를 변경한다.
+```
+.container {
+  height: 200px;
+  border: 2px solid greenyellow;
+  display: flex;
+}
+
+.item {
+  height: 50px;
+  margin: 5px;
+  background-color: blue;
+  border: 1px solid skyblue;
+  flex-basis: 0;
+}
+
+.item:nth-child(1) {
+  flex-grow: 1;
+}
+.item:nth-child(2) {
+  flex-grow: 3;
+}
+.item:nth-child(3) {
+  flex-grow: 5;
+}
+```
+![image](https://user-images.githubusercontent.com/64582209/133070846-920f76da-e606-42a8-8f55-940e631185eb.png)
+* flex-basis : 0을 지정해 모든 아이템요소들의 크기를 동일하게 만들고 각 아이템에 flex-grow를 지정해 정확히 요소들의 크기가 1:3:5비율로 가지게 된다.
+
+### flex
+* flex-grow, flex-shrink, flex-basis를 합쳐서 사용하는 단축속성
+* 한개 또는 두개의 단위 없는 숫자 값을 사용할 땐, flex-basis값은 auto가 아니라 0이다.
+* 값이 한 개일 때
+  * number를 지정하면 flex-grow이다
+  * length 또는 percentage를 지정하면 flex-basis이다.
+  * none, auto, initial중 하나를 지정할 수 있다.
+* 값이 두 개일때
+  * 첫번째 값은 number이어야 하며 flex-grow가 딘다.
+  * 두번째 값은 number이면 flex-shrink, length나 percentage이면 flex-basis
+* 값이 세 개일 때 순서는 flex-grow > flex-shrink > flex-basis로 작성해야 한다.
