@@ -21,6 +21,7 @@ Today I Learned
    * [폰트 관련 속성](https://github.com/jangmoonseok/TIL/blob/main/CSS/%ED%8F%B0%ED%8A%B8%EA%B4%80%EB%A0%A8%EC%86%8D%EC%84%B1.md)
    * [단위와 값](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EB%8B%A8%EC%9C%84%EC%99%80%EA%B0%92.md)
    * [박스 모델](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EB%B0%95%EC%8A%A4%EB%AA%A8%EB%8D%B8.md)
+   * [레이아웃](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83.md)
    * [색상과 배경](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EC%83%89%EC%83%81%EA%B3%BC%EB%B0%B0%EA%B2%BD.md)
    * [transform](https://github.com/jangmoonseok/TIL/blob/main/CSS/transform.md)
    * [transition](https://github.com/jangmoonseok/TIL/blob/main/CSS/transition.md)
