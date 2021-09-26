@@ -89,3 +89,142 @@ switch(browser){
 console.log(msg);
 ```
 * 같은 case문을 실행하고 싶은 경우엔 break를 쓰지않고 조건을 쭉 나열해서 쓴다.
+
+# 반복문
+
+## for 반복문
+* 선언문, 조건문, 증감문 형태로 이루어진 반복문
+* 조건문이 fail이 되기 전까지 코드 블록을 계속 반복 수행
+* 선언문, 조건문, 증감문 자리에 공백 입력 가능
+
+```
+for(let i = 0; i < 5; i++){
+    console.log(i)
+}
+// 0,1,2,3,4
+
+for(let i = 10; i < 3; i++){
+    console.log(i)
+}
+// 
+
+let num = 0
+for(; num < 3;){
+    console.log(num)
+    num++;
+}
+// 0,1,2
+
+for(let i = 0; i < 3; i++){
+    for(let j = 0; j < 3; j++){
+        console.log(`${i} + ${j} = ${i + j}`)
+    }
+}
+/* 0 + 0 = 0
+0 + 1 = 1
+0 + 2 = 2
+1 + 0 = 1
+...
+2 + 2 = 4
+*/
+
+```
+* 조건문이 fail이 되면 블럭안에있는 코드는 아예 실행되지 않는다, 선언문과 증감문이 꼭 ()안에 없어도 된다.
+
+### for 반복문 확장
+* for .. in 반복문
+    * 객체의 key,value 형태를 반복하여 수행하는데 최적화 된 유형
+    * 첫번째부터 마지막까지, 객체의 키 개수만큼 반복
+```
+const person = {
+    name:"John",
+    age:26,
+    height:180,
+    job:"student"
+}
+
+let key = "", value="";
+for(let x in person){
+    key += x+" ";
+    value += person[x]+" "
+}
+console.log(key) //name age height job 
+console.log(value) //John 26 180 student 
+
+```
+* for.. of 반복문
+    * Collection 객체 자체가 Symbol.iterator속성을 가지고 있어야 동작 가능한 유형
+    * ES6에 새로 추가된 Collection기반의 반복 구문
+```
+const languege = "JavaScript";
+let text = "";
+
+for(let x of languege){
+    text += x;
+    console.log(x)//J, a, v, a, ..., t
+}
+console.log(text) //JavaScript
+```
+
+## while 반복문
+* 조건문이 참일 때 코드 블록을 계속해서 반복 수행하는 반복문
+* for 문에 비해 선언문과 증감문 없이 loop를 수행하며, 무한loop등 수행 시 많이 사용
+* 조건문을 코드 블록보다 아래로 옮긴 do...while 반복문도 존재(최소 한번 수행이 필요할 때 많이 사용)
+
+```
+let i = 0;
+while(i < 3){
+    console.log(i);
+    i++;
+}
+// 0,1,2
+
+i = 0;
+do{
+    console.log(i);
+    i++;
+}while(i < 3)
+// 0,1,2
+
+i = 4;
+while(i < 3){
+    console.log(i);
+    i++;
+}
+// 
+
+do{
+    console.log(i);
+    i++;
+}while(i < 3)
+// 4
+```
+* 이처럼 그냥 while과 do..while의 차이점은 do구문은 조건을 따지지 않기 때문에 최소1회는 실행이 된다는 점이다.
+
+## 반복문 제어
+* break
+    * 반복문 수행 시 코드 블록을 탈출할 때 사용되는 식별자
+    * 다중 반복문일 경우 가장 안쪽의 반복문을 종료
+    * Label을 통하여 다중 반복문을 한번에 종료가능
+
+* continue
+    * 반복문 수행 시 코드 블록 실행을 해당 라인에서 중지하고 블록 코드를 종료 시킨 후 반복문 내 명시된 조건 판단
+
+```
+// break
+let text = "";
+for(let i = 0; i < 10; i++){
+    if(i === 3) break;
+    text += i;
+}
+console.log(text)// 012
+
+// continue
+text = "";
+for(let i = 0; i < 10; i++){
+    if(i === 3) continue;
+    text += i
+}
+console.log(text) // 012456789
+```
+* break는 바로 반복문을 탈출하고, continue는 그 조건에 해당하는 조건문은 건너뛰고 반복 수행
