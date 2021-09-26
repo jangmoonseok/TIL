@@ -31,6 +31,7 @@ Today I Learned
 
 * JavaScript
    * [연산자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EC%97%B0%EC%82%B0%EC%9E%90.md)
+   * [변수와상수, 자료형](https://github.com/jangmoonseok/TIL/blob/main/JS/%EB%B3%80%EC%88%98%EC%99%80%EC%83%81%EC%88%98%2C%EC%9E%90%EB%A3%8C%ED%98%95.md)
 * 연습문제 및 개인공부
    * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
    * [HTML/CSS연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML,CSS%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
