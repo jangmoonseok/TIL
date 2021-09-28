@@ -82,15 +82,75 @@ console.log(date_parse_3) // 2021-09-28T21:26:00.000Z, UTC+9
 * 날짜 정보 얻기(시/분/초/ms): Date.getHours(), Date.getMinutes(),Date.getSeconds()
 * 주어진 일시 - 1970/1/1차분(ms): Date.getTime(),  현지시간 - 표준 시간 차분(min): Date.getTimezoneOffset()
 
+```
+let date = new Date(Date.UTC(2021,0,1))
+
+console.log(date) // 2021-01-01T00:00:00.000Z
+
+console.log(date.getFullYear()) //2021
+console.log(date.getMonth()) //0, Month범위 1월(0)~12월(11)이므로 0은 1월
+console.log(date.getDate())// 1
+console.log(date.getDay()) // 5, Day범위 일요일(0)~토요일(6)이므로 5는 금요일 
+
+console.log(date.getHours()) // 9, 현지 시간 기준으로 시를 반환 UTC+0기준 00시 이므로 현지는 9를 더해 9가 나옴
+console.log(date.getUTCHours()) // 0, UTC보정
+
+console.log(date.getTime()) // 1609459200000, 주어진 일자가 1970/1/1로 부터 시간이 얼마나 지났는지 ms로 반환
+console.log(new Date(date.getTime())) // 2021-01-01T00:00:00.000Z, getTime으로 받은 ms를 Date생성자 매개변수로 넣어줌
+console.log(date.getTimezoneOffset()) // -540, 현지시간와 표준 시간차이를 min으로 반환
+```
+
 ### 날짜 정보 설정
 * 날짜 정보 설정(년/월/일):Date.setFullYear(), Date.setMonth(), Date.setDate()
 * 날짜 정보 설정(시/분/초/ms):Date.setHours(), Date.setMinutes(),Date.setSeconds()
+```
+let date = new Date()
+let ms_year = date.setFullYear(2021,4,5)
+console.log(date) // 2021-05-05T12:46:50.628Z, date가 설정한 날짜로 변경
+console.log(ms_year) // 1620218810628, 설정한 날짜가 1970/1/1로 부터 얼마나 시간이 지났는지 ms로 반환
+
+date.setDate(1)
+console.log(date) // 2021-05-01T12:50:51.684Z, 날짜가 1일로 변경
+date.setHours(date.getHours() + 2)
+console.log(date) // 2021-05-05T14:50:13.195Z
+```
 
 ### parse
 * 문자열 기반 날짜 정보 설정: Date.parse(YYYY-MM-DDTHH:mm:ss.sssZ)
 * YYYY-MM-DD -> 날짜(연-월-일), "T"-> 구분 기호, HH:mm:ss.sss -> 시:분:초.밀리초
-* "Z"(option) -> 미 설정할 경우 현재 로킬 기준UTC, 설정할 경우 UTC+0기준
+* "Z"(option) -> 미 설정할 경우 현재 로컬 기준UTC, 설정할 경우 UTC+0기준
+```
+let parse_date = Date.parse("2021-01-01T12:00:00.000") //Z를 넣지 않으면 현지 시간, 넣으면 UTC+0기준 시간
+console.log(parse_date) // 1609470000000
+console.log(new Date(parse_date)) // 2021-01-01T03:00:00.000Z
 
+console.log(new Date(Date.parse("2021-01-01T12:00:00.000Z"))) //2021-01-01T12:00:00.000Z
+```
 ### benchmark
 * 성능 측정
   * 벤치마크 측정 대상 함수 전후로 시간을 비교하여 알고리즘 성능 측정
+```
+function dateSub(old_date, new_date){
+    return new_date - old_date
+}
+
+function getTime(old_date, new_date){
+    return new_date.getTime() - old_date.getTime()
+}
+
+function benchmark(callback){
+    let date_1 = new Date("2021-01-01")
+    let date_2 = new Date()
+
+    let start = Date.now() // 현재 시각을 ms로 반환
+    for(let i = 0; i < 100000; i++){
+        callback(date_1, date_2)
+    }
+    return Date.now() - start; // for문을 마친 후 Date.now와 for문을 돌리기전 Date.now의 차이
+}
+// date_1,date_2를 callback함수의 매개변수로 넣어 두 함수를 처리하는데 걸리는 시간을 확인하는 함수
+
+console.log("dateSub: " + benchmark(dateSub) + "ms") // 28ms
+console.log("getTime: " + benchmark(getTime) + "ms") // 7ms
+
+```
