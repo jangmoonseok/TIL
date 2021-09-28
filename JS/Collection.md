@@ -85,3 +85,72 @@ console.log(juice_recipe_kv) // [ [ 'strawberry', 50 ], [ 'banana', 100 ], [ 'ic
 let juice_recipe_map = new Map(juice_recipe_kv)
 console.log(juice_recipe_map) // Map(3) { 'strawberry' => 50, 'banana' => 100, 'ice' => 150 }
 ```
+
+## Set
+![image](https://user-images.githubusercontent.com/64582209/135072947-56e5f1fc-88f9-472d-921e-55419fa123b7.png)
+
+### 요소 추가/삭제
+* 요소 추가:Set.add(value), 요소 존재 여부:Set.has(value), 요소 삭제:Set.delete(value)
+* 다양한 자료형을 value로 사용 가능하며, set.add호출 시 set이 반호나되므로 체이닝 가능
+```
+let set = new Set();
+let nums = new Set([1,2,3,4,5])
+let str = new Set("hello!!")
+
+console.log(set) // Set(0) {}
+console.log(nums) // Set(5) { 1, 2, 3, 4, 5 }
+console.log(str) // Set(5) { 'h', 'e', 'l', 'o', '!' }, 중복된 데이터인 l한개가 빠짐
+
+// 요소 추가
+set.add(1)
+console.log(set) // Set(1) { 1 }
+// 요소 추가 체이닝
+set.add(1).add(2).add(10).add(20)
+console.log(set) // Set(4) { 1, 2, 10, 20 }, 중복된 데이터인 1은 추가안됨
+
+// 요소 존재 여부
+console.log(set.has(1)) // true
+console.log(set.has(3)) // false
+
+// 요소 삭제
+set.delete(1)
+console.log(set) // Set(3) { 2, 10, 20 }
+set.delete(3)
+console.log(set) // Set(3) { 2, 10, 20 }
+console.log(set.delete(3)) // false
+```
+
+### Set 반복문
+* Collection객체인 Set이 가지고 있는 iterator속성을 이용하여  for...of구문을 통해 반복문 수행 가능
+
+```
+let str = new Set("hello!!")
+
+for(let item of str){
+    console.log(item)
+}
+// h e l o !
+
+for(let item of str.keys()){
+    console.log(item)
+}
+// h e l o ! , Map과 똑같은 작동 원리이지만 Set은 key가 없으므로 요소 그대로 호출됨
+
+for(let item of str.values()){
+    console.log(item)
+}
+// h e l o !, str.keys()와 마찬가지
+
+for(let item of str.entries()){
+    console.log(item)
+}
+/* 
+[ 'h', 'h' ]
+[ 'e', 'e' ]
+[ 'l', 'l' ]
+[ 'o', 'o' ]
+[ '!', '!' ]
+호환성을 위해 Map과 똑같은 Collection객체의 원리로 작동
+key,value가 따로 없으므로 key,value 모두 요소가 그대로 들어간다.
+*/
+```
