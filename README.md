@@ -38,7 +38,7 @@ Today I Learned
    * [메서드,배열](https://github.com/jangmoonseok/TIL/blob/main/JS/%EB%A9%94%EC%84%9C%EB%93%9C%2C%EB%B0%B0%EC%97%B4.md)
    * [고차함수,생성자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98%2C%EC%83%9D%EC%84%B1%EC%9E%90.md)
    * [Collection](https://github.com/jangmoonseok/TIL/blob/main/JS/Collection.md)
-   * [Math.Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
+   * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
 * 연습문제 및 개인공부
    * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
    * [HTML/CSS연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML,CSS%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
