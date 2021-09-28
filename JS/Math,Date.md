@@ -56,7 +56,27 @@ console.log(Math.floor(-3.6)) // -4
 ### Date 생성자
 * Date 생성자 종류 : new Date(), new Date(miniseconds), new Date(datestring), new Date(year,month,date,hours,minutes,seconds,ms)
 * month값 범위는 1월(0)~12월(11)
+```
+// new Date(), Date()
+let date_1 = new Date()
+console.log(date_1) // 2021-09-28T12:12:43.192Z, UTC+0기준 Date 객체 반환
+let date_2 = Date()
+console.log(date_2) // Tue Sep 28 2021 21:16:28 GMT+0900 (대한민국 표준시) , 현재 시간을 문자열로 반환
+// new Date(ms)
+let date_ms_1 = new Date(0)
+console.log(date_ms_1) // 1970-01-01T00:00:00.000Z ,1970년1월1일 기준 0ms지난 날짜
+let date_ms_2 = new Date(1000 * 3600 * 24)
+console.log(date_ms_2) // 1970-01-02T00:00:00.000Z , 1970년1월1일 기준 1000*3600*24 ms 지난 날짜
 
+// new Date(datestring)
+let date_parse_1 = new Date("2021-09-28")
+console.log(date_parse_1) // 2021-09-28T00:00:00.000Z
+// new Date(year,month,date,hours,minutes,seconds,ms)
+let date_parse_2 = new Date(2021,8,28,21,26) // month 범위는 1월(0)~12월(11)
+console.log(date_parse_2) // 2021-09-28T12:26:00.000Z, UTC+0기준 날짜 반환
+let date_parse_3 = new Date(Date.UTC(2021,8,28,21,26))
+console.log(date_parse_3) // 2021-09-28T21:26:00.000Z, UTC+9
+```
 ### 날짜 정보 얻기
 * 날짜 정보 얻기(년/월/일/요일): Date.getFullYear(), Date.getMonth(), Date.getDate(), Date.getDay()
 * 날짜 정보 얻기(시/분/초/ms): Date.getHours(), Date.getMinutes(),Date.getSeconds()
