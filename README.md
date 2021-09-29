@@ -41,6 +41,4 @@ Today I Learned
    * [Collection](https://github.com/jangmoonseok/TIL/blob/main/JS/Collection.md)
    * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
 ### 실전문제 
-* 연습문제 및 개인공부
-   * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
-   * [HTML/CSS연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML,CSS%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
+
