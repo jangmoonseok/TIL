@@ -4,7 +4,7 @@ Today I Learned
 매일 공부한 내용을 정리하기
 ```
 # ZeroBase_OlineFrontEnd
-* HTML
+## HTML
    * [HTML개요](https://github.com/jangmoonseok/TIL/blob/main/HTML/HTML%EA%B0%9C%EC%9A%94.md)
    * [HTML이란?](https://github.com/jangmoonseok/TIL/blob/main/HTML/HTML%EC%9D%B4%EB%9E%80%3F.md)
    * [메타데이터 요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9A%94%EC%86%8C.md)
@@ -15,7 +15,7 @@ Today I Learned
    * [폼 요소](https://github.com/jangmoonseok/TIL/blob/main/HTML/%ED%8F%BC%EC%9A%94%EC%86%8C.md)
    * [전역특성](https://github.com/jangmoonseok/TIL/blob/main/HTML/%EC%A0%84%EC%97%AD%ED%8A%B9%EC%84%B1.md)
 
-* CSS
+## CSS
    * [CSS개요](https://github.com/jangmoonseok/TIL/blob/main/CSS/CSS%EA%B0%9C%EC%9A%94.md)
    * [선택자의 종류](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EC%84%A0%ED%83%9D%EC%9E%90(%EC%85%80%EB%A0%89%ED%84%B0).md)
    * [폰트 관련 속성](https://github.com/jangmoonseok/TIL/blob/main/CSS/%ED%8F%B0%ED%8A%B8%EA%B4%80%EB%A0%A8%EC%86%8D%EC%84%B1.md)
@@ -29,7 +29,8 @@ Today I Learned
    * [flex](https://github.com/jangmoonseok/TIL/blob/main/CSS/flex.md)
    * [그리드](https://github.com/jangmoonseok/TIL/blob/main/CSS/%EA%B7%B8%EB%A6%AC%EB%93%9C.md)
 
-* JavaScript
+## JavaScript
+### 기본문법
    * [연산자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EC%97%B0%EC%82%B0%EC%9E%90.md)
    * [변수와상수, 자료형](https://github.com/jangmoonseok/TIL/blob/main/JS/%EB%B3%80%EC%88%98%EC%99%80%EC%83%81%EC%88%98%2C%EC%9E%90%EB%A3%8C%ED%98%95.md)
    * [객체타입,형 변환](https://github.com/jangmoonseok/TIL/blob/main/JS/%EA%B0%9D%EC%B2%B4%ED%83%80%EC%9E%85%2C%ED%98%95%EB%B3%80%ED%99%98.md)
@@ -39,6 +40,7 @@ Today I Learned
    * [고차함수,생성자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98%2C%EC%83%9D%EC%84%B1%EC%9E%90.md)
    * [Collection](https://github.com/jangmoonseok/TIL/blob/main/JS/Collection.md)
    * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
+### 실전문제 
 * 연습문제 및 개인공부
    * [HTML연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
    * [HTML/CSS연습문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/HTML,CSS%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.md)
