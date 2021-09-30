@@ -47,3 +47,4 @@ Today I Learned
 
 ## 수학이론
 * [알고리즘 기본 수학이론](https://github.com/jangmoonseok/TIL/blob/main/%EC%88%98%ED%95%99%EA%B8%B0%EB%B3%B8%EC%9D%B4%EB%A1%A0/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%88%98%ED%95%99%EC%9D%B4%EB%A1%A0.md)
+* [수학이론 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%88%98%ED%95%99%EA%B8%B0%EB%B3%B8%EC%9D%B4%EB%A1%A0/%EA%B8%B0%EB%B3%B8%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
