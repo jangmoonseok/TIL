@@ -40,9 +40,9 @@ Today I Learned
    * [고차함수,생성자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98%2C%EC%83%9D%EC%84%B1%EC%9E%90.md)
    * [Collection](https://github.com/jangmoonseok/TIL/blob/main/JS/Collection.md)
    * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
-### 실전문제 
-* [반복문 문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EB%B0%98%EB%B3%B5%EB%AC%B8.md)
-* [조건문 문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
+### 문제풀이 
+* [반복문 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EB%B0%98%EB%B3%B5%EB%AC%B8.md)
+* [조건문 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
 * [종합 문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%A2%85%ED%95%A9.md)
 
 ## 수학이론
