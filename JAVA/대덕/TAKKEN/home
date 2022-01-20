@@ -1,0 +1,102 @@
+package e_oop.homework;
+
+import e_oop.ScanUtil;
+
+public class test {
+	Character c;
+	Skil[] skils = new Skil[3];
+	String[] chList = {"Jin", "Paul", "Heihachi"};
+	
+	public static void main(String[] args) {
+		new test();
+	}
+
+	test(){
+		System.out.println("캐릭터를 선택해주세요.");
+		System.out.println("1.Jin 2.Paul 3.Heihachi >");
+		int input = ScanUtil.nextInt();
+		switch(input) {
+		case 1:
+			c = new Character(chList[input - 1]);
+			skils[0] = new Skil("나락쓸기", 15, 5);
+			skils[1] = new Skil("풍신권", 25, 3);
+			skils[2] = new Skil("진.귀신멸렬", 60, 1);
+			System.out.println("캐릭터를 "+ c.name + "로 선택하셨습니다.");
+			battle(c);
+			break;
+		case 2:
+			c = new Character(chList[input - 1]);
+			skils[0] = new Skil("낙엽", 15, 5);
+			skils[1] = new Skil("붕권", 25, 3);
+			skils[2] = new Skil("만성용왕권", 60, 1);
+			System.out.println("캐릭터를 "+ c.name + "로 선택하셨습니다.");
+			battle(c);
+			break;
+		case 3:
+			c = new Character(chList[input - 1]);
+			skils[0] = new Skil("나락쓸기", 15, 5);
+			skils[1] = new Skil("풍신권", 25, 3);
+			skils[2] = new Skil("귀와", 60, 1);
+			System.out.println("캐릭터를 "+ c.name + "로 선택하셨습니다.");
+			battle(c);
+			break;
+		}
+	}
+
+	
+	
+	void battle(Character c) {
+		int enemyNum = (int)(Math.random() * chList.length);
+		Character enemy = new Character(chList[enemyNum]);
+		int turn = 5;
+		while(turn > 0) {			
+			System.out.println("1.공격 2.방어 3.캐릭터정보");
+			int input1 = ScanUtil.nextInt();
+			switch(input1) {
+			case 1 : //공격
+				turn--;
+				attack(skils,enemy);
+				if(enemy.hp <= 0) {
+					System.out.println("승리!");
+					turn = 0;
+				}
+				System.out.println("남은 공격기회 " + turn );
+				break;
+			case 2 : //방어
+				
+				break;
+//			case 3 :
+//				c.status();
+//				break;
+			}
+		}
+		System.out.println("전투 종료");
+	}
+
+	void attack(Skil[] skils, Character enemy) {
+		System.out.println("1."+ skils[0].name + " 2." + skils[1].name + " 3." + skils[2].name + " >");
+		int input2 = ScanUtil.nextInt();
+		switch(input2) {
+		case 1 :
+			skils[0].numOfskil--;
+			enemy.hp -= skils[0].att;
+			System.out.println(skils[0].name + "기술을 사용해 적에게 " + skils[0].att + "의 피해를 가했습니다.");
+			System.out.println(skils[0].name + "남은 횟수 : " + skils[0].numOfskil + " 적의 남은 체력 : " + enemy.hp);
+			break;
+		case 2 :
+			skils[1].numOfskil--;
+			enemy.hp -= skils[1].att;
+			System.out.println(skils[1].name + "기술을 사용해 적에게 " + skils[1].att + "의 피해를 가했습니다.");
+			System.out.println(skils[1].name + "남은 횟수 : " + skils[1].numOfskil + " 적의 남은 체력 : " + enemy.hp);
+			break;
+		case 3 :
+			skils[2].numOfskil--;
+			enemy.hp -= skils[2].att;
+			System.out.println(skils[2].name + "기술을 사용해 적에게 " + skils[2].att + "의 피해를 가했습니다.");
+			System.out.println(skils[2].name + "남은 횟수 : " + skils[2].numOfskil + " 적의 남은 체력 : " + enemy.hp);
+			break;
+		}
+		
+	}
+
+}
