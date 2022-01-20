@@ -1,13 +1,13 @@
 package e_oop.homework;
 
-public class Skil {
+public class Skill{
 	String name;
 	int att;
 	int numOfskil;
 	
-	Skil(String name, int att, int numOfskil){
+	Skill(String name, int att, int numOfskill){
 		this.name = name;
 		this.att = att;
-		this.numOfskil = numOfskil;
+		this.numOfskil = numOfskill;
 	}
 }
