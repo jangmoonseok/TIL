@@ -1,0 +1,20 @@
+package e_oop.homework;
+
+public class Character {
+	int hp = 100;
+	String name;
+
+	
+	Character(String name){
+		this.name = name;
+	}
+	
+//	void status() {
+//		 System.out.println("이름 : " + name);
+//		 System.out.println("===============  스킬  ================");
+//		 for(int i = 0; i < skils.length; i++) {
+//			 System.out.println(skils[i].name + skils[i].att + skils[i].numOfskil);
+//		 }
+//		 System.out.println("=======================================");
+//	}
+}
