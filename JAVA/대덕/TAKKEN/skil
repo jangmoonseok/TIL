@@ -1,0 +1,13 @@
+package e_oop.homework;
+
+public class Skil {
+	String name;
+	int att;
+	int numOfskil;
+	
+	Skil(String name, int att, int numOfskil){
+		this.name = name;
+		this.att = att;
+		this.numOfskil = numOfskil;
+	}
+}
