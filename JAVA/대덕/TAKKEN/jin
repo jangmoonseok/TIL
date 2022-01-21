@@ -1,0 +1,13 @@
+package e_oop.homework;
+
+public class Jin extends Character{
+
+	String name = "Jin";
+	
+	Jin(){
+		super.name = name;
+		super.skills[0] = new Skill("나락쓸기", 15, 5, true);
+		super.skills[1] = new Skill("풍신권", 25, 3, true);
+		super.skills[2] = new Skill("진.귀신멸렬", 60, 1, false);
+	}
+}
