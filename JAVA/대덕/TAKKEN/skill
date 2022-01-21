@@ -4,10 +4,12 @@ public class Skill{
 	String name;
 	int att;
 	int numOfskil;
+	boolean defence;
 	
-	Skill(String name, int att, int numOfskill){
+	Skill(String name, int att, int numOfskill, boolean defence){
 		this.name = name;
 		this.att = att;
 		this.numOfskil = numOfskill;
+		this.defence = defence;
 	}
 }
