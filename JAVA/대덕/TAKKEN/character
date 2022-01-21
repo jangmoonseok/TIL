@@ -1,20 +1,123 @@
 package e_oop.homework;
 
+import e_oop.ScanUtil;
+
 public class Character {
 	int hp = 100;
 	String name;
+	Skill[] skills = new Skill[3];
 
 	
-	Character(String name){
-		this.name = name;
+
+	
+	void attack(Character my, Character enemy) {
+		System.out.println("1."+ skills[0].name + " 2." + skills[1].name + " 3." + skills[2].name + " >");
+		int input2 = ScanUtil.nextInt();
+		switch(input2) {
+		case 1 :
+			if(skills[0].numOfskil <= 0) {
+				skills[0].numOfskil = 0;
+				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
+				break;
+			}
+			skills[0].numOfskil--;
+			if(enemyTurn(my,skills[0])) {
+				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
+				enemy.hp -= skills[0].att;
+				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
+				System.out.println(skills[0].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[0].numOfskil);
+				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
+				System.out.println("---------------------------------------------");
+				enemyAttack(my);
+				break;
+			}
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.
+			System.out.println("적 " + enemy.name + "이 " + skills[0].name + "을 방어했습니다.");
+			System.out.println("===================== 턴 종료 ========================");
+			break;
+		case 2 :
+			if(skills[1].numOfskil == 0) {
+				skills[1].numOfskil = 0;
+				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
+			}
+			skills[1].numOfskil--;
+			if(enemyTurn(my,skills[1])) {
+				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
+				enemy.hp -= skills[1].att;
+				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
+				System.out.println(skills[1].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[1].numOfskil);
+				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
+				System.out.println("---------------------------------------------");
+				enemyAttack(my);
+				break;
+			}
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.
+			System.out.println("적 " + enemy.name + "이 " + skills[1].name + "을 방어했습니다.");
+			System.out.println("===================== 턴 종료 ========================");
+			break;
+		case 3 :
+			if(skills[2].numOfskil == 0) {
+				skills[2].numOfskil = 0;
+				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
+				break;
+			}
+			skills[2].numOfskil--;
+			if(enemyTurn(my,skills[2])) {
+				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
+				enemy.hp -= skills[2].att;
+				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
+				System.out.println(skills[2].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[2].numOfskil);
+				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
+				System.out.println("---------------------------------------------");
+				//적의 공격은 랜덤
+				enemyAttack(my);
+				break;
+			}
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.
+			System.out.println("적 " + enemy.name + "이 " + skills[2].name + "을 방어했습니다.");
+			System.out.println("===================== 턴 종료 ========================");
+			break;
+		}
 	}
 	
-//	void status() {
-//		 System.out.println("이름 : " + name);
-//		 System.out.println("===============  스킬  ================");
-//		 for(int i = 0; i < skils.length; i++) {
-//			 System.out.println(skils[i].name + skils[i].att + skils[i].numOfskil);
-//		 }
-//		 System.out.println("=======================================");
-//	}
+	boolean enemyTurn(Character my, Skill skill) {
+		boolean attack = true;
+		int num = (int)(Math.random() * 2); //0 or 1중에 랜덤으로 뽑아서 공격,방어를 랜덤으로 정한다.
+		if(num == 1) {
+			//num = 1이면 방어할 수 있는 기술을 방어한다.
+			if(skill.defence) {
+				//적이 방어를 택했고 나의 기술의 skill.defence가 true라면 attack을 false로 변경
+				attack = false;
+			}
+		}
+		return attack;
+	}
+	
+	void enemyAttack(Character my) {
+		int enemySkillNum = (int)(Math.random() * skills.length);
+		Skill enemySkill = skills[enemySkillNum];
+		if(enemySkill.numOfskil <= 0) {
+			enemySkillNum = (int)(Math.random() * skills.length);
+			enemySkill = skills[enemySkillNum];
+		}
+		enemySkill.numOfskil--;
+		my.hp -= enemySkill.att;
+		my.hp = my.hp <= 0 ? 0 : my.hp;
+		System.out.println("적 " + name + "이(가)" + enemySkill.name + "을 사용했습니다. > 남은 사용횟수 : " + enemySkill.numOfskil );
+		System.out.println ("내" + my.name + "의 남은체력 : " + my.hp );
+		System.out.println("===================== 턴 종료 ========================");
+	}
+	
+	void defence() {
+		
+	}
+	
+	void status() {
+		 System.out.println("이름 : " + name);
+		 System.out.println("================ 기술 ================");
+		 for(int i = 0; i < skills.length; i++) {
+				 System.out.println(skills[i].name + "> 위력 : " + skills[i].att + " 사용횟수 : " + skills[i].numOfskil);
+		 }
+		 System.out.println("=======================================");
+	}
 }
