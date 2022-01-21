@@ -1,0 +1,13 @@
+package e_oop.homework;
+
+public class Heihachi extends Character{
+
+	String name = "Heihachi";
+	
+	Heihachi(){
+		super.name = name;
+		super.skills[0] = new Skill("나락쓸기", 15, 5, true);
+		super.skills[1] = new Skill("풍신권", 25, 3, true);
+		super.skills[2] = new Skill("귀와", 60, 1, false);
+	}
+}
