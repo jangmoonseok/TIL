@@ -1,0 +1,13 @@
+package e_oop.homework;
+
+public class Paul extends Character{
+
+	String name = "Paul";
+	
+	Paul(){
+		super.name = name;
+		super.skills[0] = new Skill("낙엽", 15, 5, true);
+		super.skills[1] = new Skill("붕권", 25, 3, true);
+		super.skills[2] = new Skill("만성용왕권", 60, 1, false);
+	}
+}
