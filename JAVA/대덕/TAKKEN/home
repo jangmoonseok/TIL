@@ -12,7 +12,7 @@ public class tekken {
 
 	tekken(){
 		System.out.println("캐릭터를 선택해주세요.");
-		System.out.println("1.Jin 2.Paul 3.Heihachi >");
+		System.out.println("1.Jin 2.Paul 3.Heihachi 4.Hwoarang >");
 		int cPick = ScanUtil.nextInt();
 		switch(cPick) {
 		case 1:
@@ -27,25 +27,32 @@ public class tekken {
 			my = new Heihachi();
 			System.out.println("캐릭터를 "+ my.name + "로 선택하셨습니다.");
 			break;
+		case 4:
+			my = new Hwoarang();
+			System.out.println("캐릭터를 "+ my.name + "로 선택하셨습니다.");
+			break;
 		}
 		System.out.println("============================");
-		System.out.println("대결상대를 선택해주세요.");
-		System.out.println("1.Jin 2.Paul 3.Heihachi >");
-		int enemyPick = ScanUtil.nextInt();
-		switch(enemyPick) {
+		int enemyNum = (int)(Math.random() * 4) + 1;
+		switch(enemyNum) {
 		case 1:
 			enemy = new Jin();
-			System.out.println("대결상대를 "+ enemy.name + "로 선택하셨습니다.");
+			System.out.println("대결상대는 "+ enemy.name + "입니다.");
 			battle(my,enemy);
 			break;
 		case 2:
 			enemy = new Paul();
-			System.out.println("대결상대를 "+ enemy.name + "로 선택하셨습니다.");
+			System.out.println("대결상대는 "+ enemy.name + "입니다.");
 			battle(my,enemy);
 			break;
 		case 3:
 			enemy = new Heihachi();
-			System.out.println("대결상대를 "+ enemy.name + "로 선택하셨습니다.");
+			System.out.println("대결상대는 "+ enemy.name + "입니다.");
+			battle(my,enemy);
+			break;
+		case 4:
+			enemy = new Hwoarang();
+			System.out.println("대결상대는 "+ enemy.name + "입니다.");
 			battle(my,enemy);
 			break;
 		}
