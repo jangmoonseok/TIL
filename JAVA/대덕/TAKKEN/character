@@ -20,102 +20,90 @@ public class Character {
 		case 1 :
 			if(skills[0].numOfskil <= 0) {
 				//기술을 다 썼을때
-				skills[0].numOfskil = 0;
-				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
-				if(enemyTurn(enemy)) {
-					//적이 공격일때
-					enemyAttack(enemy);
-					break;
-				}else {					
-					//적이 방어일때
-					System.out.println("아무일도 일어나지 않았습니다.");
-					break;
-				}
+				attackMiss(skills[0], enemy);
+				break;
 			}
-			
 			skills[0].numOfskil--;
 			if(enemyTurn(enemy)) {
 				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
-				enemy.hp -= skills[0].att;
-				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
-				System.out.println(skills[0].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[0].numOfskil);
-				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
-				System.out.println("--------------------------------------------->>");
+				attackSucc(skills[0], enemy);
 				if(enemy.hp <= 0) {
 					break;
 				}
 				enemyAttack(enemy);
 				break;
-			}else {				
-				//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.			
-					System.out.println("적 " + enemy.name + "이 " + skills[0].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[0].numOfskil);
-					break;
-			}
-
+			}			
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.			
+			System.out.println("적 " + enemy.name + "이 " + skills[0].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[0].numOfskil);
+			break;
 		case 2 :
-			if(skills[1].numOfskil == 0) {
-				skills[1].numOfskil = 0;
-				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
-				if(enemyTurn(enemy)) {
-					//적이 공격일때
-					enemyAttack(enemy);
-					break;
-				}else {					
-					//적이 방어일때
-					System.out.println("아무일도 일어나지 않았습니다.");
-					break;
-				}
+			if(skills[1].numOfskil <= 0) {
+				//기술을 다 썼을때
+				attackMiss(skills[1], enemy);
+				break;
 			}
 			skills[1].numOfskil--;
 			if(enemyTurn(enemy)) {
 				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
-				enemy.hp -= skills[1].att;
-				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
-				System.out.println(skills[1].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[1].numOfskil);
-				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
-				System.out.println("--------------------------------------------->>");
+				attackSucc(skills[1], enemy);
 				if(enemy.hp <= 0) {
 					break;
 				}
 				enemyAttack(enemy);
 				break;
-			}else {				
-				//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.				
-				System.out.println("적 " + enemy.name + "이 " + skills[1].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[1].numOfskil);
-				break;
-			}
+			}			
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.				
+			System.out.println("적 " + enemy.name + "이 " + skills[1].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[1].numOfskil);
+			break;
 		case 3 :
-			if(skills[2].numOfskil == 0) {
-				skills[2].numOfskil = 0;
-				System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
-				if(enemyTurn(enemy)) {
-					//적이 공격일때
-					enemyAttack(enemy);
-					break;
-				}else {					
-					//적이 방어일때
-					System.out.println("아무일도 일어나지 않았습니다.");
-					break;
-				}
+			if(skills[2].numOfskil <= 0) {
+				//기술을 다 썼을때
+				attackMiss(skills[2], enemy);
+				break;
 			}
 			skills[2].numOfskil--;
 			if(enemyTurn(enemy)) {
 				//enemyTurn에서 true를 리턴했을때 서로 공격을 주고받는다.
-				enemy.hp -= skills[2].att;
-				enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
-				System.out.println(skills[2].name + "을 사용했습니다. > 남은 사용횟수 : " + skills[2].numOfskil);
-				System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
-				System.out.println("--------------------------------------------->>");
+				attackSucc(skills[2], enemy);
 				if(enemy.hp <= 0) {
 					break;
 				}
 				enemyAttack(enemy);
 				break;
+			}			
+			//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.				
+			System.out.println("적 " + enemy.name + "이 " + skills[2].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[2].numOfskil);
+			break;
+		}
+	}
+
+	void defence(Character enemy) {
+		if(enemyTurn(enemy)) {
+			//적이 공격일때 적의 공격을 방어
+			if(defChance > 0) {
+				//적이 공격일때 defChance가 있으면 공격방어
+				defChance--;
+				int enemySkillNum = (int)(Math.random() * skills.length);
+				Skill enemySkill = enemy.skills[enemySkillNum];
+				if(enemySkillNum == 2) {
+					if(enemySkill.numOfskil == 0) {
+						//적의 공격이 필살기이고 사용횟수가 0일경우에 공격을 남은 2개 기술중에서 재설정
+						enemySkillNum = (int)(Math.random() * skills.length - 1);
+						enemySkill = skills[enemySkillNum];
+					}
+				}
+				enemySkill.numOfskil--;
+				System.out.println("적 " + enemy.name + "의 " + enemySkill.name + "을 방어했습니다.");
+				System.out.println("defChance : " + defChance);
 			}else {				
-				//enemyTurn에서 false를 반환했을 때 나의 공격이 무효화 된다.				
-				System.out.println("적 " + enemy.name + "이 " + skills[2].name + "을 방어했습니다. > 남은 사용횟수 : " + skills[2].numOfskil);
-				break;
+				//적이 공격일때 defChance가 없으면 방어 실패
+				System.out.println("방어할 수 없습니다.");
+				enemyAttack(enemy);
 			}
+		}else {			
+			//적도 방어 나도 방어일때 턴을 넘긴다.
+			defChance--;
+			System.out.println("아무일도 일어나지 않았습니다.");
 		}
 	}
 	
@@ -152,35 +140,6 @@ public class Character {
 		System.out.println ("내" + this.name + "의 남은체력 : " + this.hp );
 	}
 	
-	void defence(Character enemy) {
-		if(enemyTurn(enemy)) {
-			//적이 공격일때 적의 공격을 방어
-			if(defChance > 0) {
-				//적이 공격일때 defChance가 있으면 공격방어
-				defChance--;
-				int enemySkillNum = (int)(Math.random() * skills.length);
-				Skill enemySkill = enemy.skills[enemySkillNum];
-				if(enemySkillNum == 2) {
-					if(enemySkill.numOfskil == 0) {
-						//적의 공격이 필살기이고 사용횟수가 0일경우에 공격을 남은 2개 기술중에서 재설정
-						enemySkillNum = (int)(Math.random() * skills.length - 1);
-						enemySkill = skills[enemySkillNum];
-					}
-				}
-				enemySkill.numOfskil--;
-				System.out.println("적 " + enemy.name + "의 " + enemySkill.name + "을 방어했습니다.");
-				System.out.println("defChance : " + defChance);
-			}else {				
-				//적이 공격일때 defChance가 없으면 방어 실패
-				System.out.println("방어할 수 없습니다.");
-				enemyAttack(enemy);
-			}
-		}else {			
-			//적도 방어 나도 방어일때 턴을 넘긴다.
-			defChance--;
-			System.out.println("아무일도 일어나지 않았습니다.");
-		}
-	}
 	
 	void status() {
 		 System.out.println("이름 : " + name);
@@ -189,5 +148,25 @@ public class Character {
 				 System.out.println(skills[i].name + "> 위력 : " + skills[i].att + " 사용횟수 : " + skills[i].numOfskil);
 		 }
 		 System.out.println("=======================================");
+	}
+	
+	private void attackMiss(Skill skill, Character enemy) {
+		skill.numOfskil = 0;
+		System.out.println("사용횟수가 소진하였습니다. 턴을 넘깁니다.");
+		if(enemyTurn(enemy)) {
+			//적이 공격일때
+			enemyAttack(enemy);
+		}else {					
+			//적이 방어일때
+			System.out.println("아무일도 일어나지 않았습니다.");
+		}
+	}
+	
+	private void attackSucc(Skill skill, Character enemy) {
+		enemy.hp -= skill.att;
+		enemy.hp = enemy.hp <= 0 ? 0 : enemy.hp;
+		System.out.println(skill.name + "을 사용했습니다. > 남은 사용횟수 : " + skill.numOfskil);
+		System.out.println("적 " + enemy.name + "의 남은체력 : " + enemy.hp );
+		System.out.println("--------------------------------------------->>");
 	}
 }
