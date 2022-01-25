@@ -6,8 +6,8 @@ public class Heihachi extends Character{
 	
 	Heihachi(){
 		super.name = name;
-		super.skills[0] = new Skill("나락쓸기", 15, 5, true);
-		super.skills[1] = new Skill("풍신권", 25, 3, true);
-		super.skills[2] = new Skill("귀와", 60, 1, false);
+		super.skills[0] = new Skill("나락쓸기", 15, 5);
+		super.skills[1] = new Skill("풍신권", 25, 5);
+		super.skills[2] = new Skill("귀와", 50, 1);
 	}
 }
