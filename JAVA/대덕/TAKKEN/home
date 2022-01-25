@@ -54,28 +54,51 @@ public class tekken {
 	
 	
 	void battle(Character my,Character enemy) {
-		System.out.println("============== 전투 시작 ================");
+		System.out.println("=========== 전투 시작 ===========");
+		int turn = 10;
 		battle : while(true) {
-					System.out.println("1.공격\t2.방어\t3.캐릭터정보");
-					int input = ScanUtil.nextInt();
-					switch(input) {
-					case 1:
-						System.out.println("공격할 기술을 선택하세요.");
-						System.out.println("-------------------------");
-						my.attack(my,enemy);
-						if(enemy.hp <= 0) {
-							System.out.println("승리!");
-							break battle;
+					if(turn > 0) {
+						System.out.println("1.공격\t2.방어\t3.캐릭터정보");
+						int input = ScanUtil.nextInt();
+						switch(input) {
+						case 1:
+							my.attack(enemy);
+							if(enemy.hp <= 0) {
+								System.out.println("========== 전투 종료 ==========");
+								System.out.println("\t  승리!");
+								System.out.println("============================");
+								break battle;
+							}
+							if(my.hp <= 0) {
+								System.out.println("========== 전투 종료 ==========");
+								System.out.println("\t패배...!");
+								System.out.println("============================");
+								break battle;
+							}
+							turn--;
+							System.out.println("남은 턴 : " + turn);
+							System.out.println("=============================");
+							break;
+						case 2:							
+							my.defence(enemy);
+							turn--;
+							System.out.println("남은 턴 : " + turn);
+							System.out.println("=============================");
+							break;
+						case 3:
+							my.status();
+							break;
 						}
-						if(my.hp <= 0) {
-							System.out.println("패배...!");
-							break battle;
+					}else {
+						System.out.println("========== 전투 종료 ==========");
+						if(my.hp > enemy.hp) {
+							System.out.println("\t  승리!");
+						}else if(my.hp < enemy.hp) {
+							System.out.println("\t패배...!");
+						}else {
+							System.out.println("\t  Draw");
 						}
-						break;
-					case 2:
-						break;
-					case 3:
-						my.status();
+						System.out.println("============================");
 						break;
 					}
 				}
