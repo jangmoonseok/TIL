@@ -42,6 +42,13 @@ public class OperatorEx4 {
 		str2 = new String("abc");
 		System.out.println(str1 == str2); //false
 		System.out.println(str1.equals(str2)); //true
+		
+		/*
+		 * 조건 연산자 ? :
+		 * - 조건식의 결과에 따라 연산결과를 달리한다.
+		 * - 간단한 if문을 가독성 좋게 쓰기 위해 사용한다.
+		 * result = (x > y) ? (참일경우 반환값) : (거짓일경우 반환값)
+		 */
 	}
 }
 ```
