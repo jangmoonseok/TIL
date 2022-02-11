@@ -24,17 +24,17 @@ public class Dao {
 		}
 		return instance;
 	}
-	int count = 1;
-	public int insertKospy(List<Object> param) {
-		String insert = "INSERT INTO KOSPY"
+	
+	int stockNo = 101;
+	public int insertStock(List<Object> param) {
+		String insert = "INSERT INTO STOCK"
 				+ "   VALUES("
-				+ "   ?,"
+				+ "   'K'||?,"
 				+ "   ?,?,?,?,?,?,?,?,?,?,?)";
 		
-		String delete = "DELETE FROM KOSPY";
 
 		List<Object> _param = new ArrayList<Object>();
-		_param.add(count++);
+		_param.add(String.valueOf(stockNo++));
 		for(int i = 0; i < param.size(); i++) {
 			_param.add(param.get(i));
 		}
@@ -43,8 +43,13 @@ public class Dao {
 		return JDBCUtil.update(insert, _param);
 	}
 	
-	public void deleteKospy() {
-		String delete = "DELETE FROM KOSPY";
-		int deleteSuccess = JDBCUtil.update(delete);
+	
+	public void deleteStock(String table) {
+		String delete = "DELETE FROM "
+				+ table;
+		List<Object> param = new ArrayList<Object>();
+		
+		JDBCUtil.update(delete);
 	}
+
 }
