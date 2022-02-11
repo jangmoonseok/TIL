@@ -1,5 +1,10 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,19 +24,27 @@ public class Dao {
 		}
 		return instance;
 	}
-	
-	public int insertKospi(List<Object> param) {
-		String sql = "INSERT INTO KOSPY"
+	int count = 1;
+	public int insertKospy(List<Object> param) {
+		String insert = "INSERT INTO KOSPY"
 				+ "   VALUES("
-				+ "   'kospy'||SEQ_STOCK_NO.NEXTVAL,"
-				+ "   ?,?,?,?,?,?,?,?,?,?,?";
+				+ "   ?,"
+				+ "   ?,?,?,?,?,?,?,?,?,?,?)";
+		
+		String delete = "DELETE FROM KOSPY";
 
 		List<Object> _param = new ArrayList<Object>();
+		_param.add(count++);
 		for(int i = 0; i < param.size(); i++) {
 			_param.add(param.get(i));
 		}
 		
 		
-		return JDBCUtil.update(sql, _param);
+		return JDBCUtil.update(insert, _param);
+	}
+	
+	public void deleteKospy() {
+		String delete = "DELETE FROM KOSPY";
+		int deleteSuccess = JDBCUtil.update(delete);
 	}
 }
