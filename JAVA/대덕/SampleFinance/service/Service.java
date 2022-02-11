@@ -16,32 +16,52 @@ import dao.Dao;
 public class Service {
 
 	public static void main(String[] args) {
-			new Service().kospi();
+			new Service().start();
 		
+			
 	}
 	
 	private Dao testDao = Dao.getInstance();
-	String Samsung = "https://finance.naver.com/item/main.naver?code=005930";
-	String LGEnerge = "https://finance.naver.com/item/main.naver?code=373220";
-	String SkHynix = "https://finance.naver.com/item/main.naver?code=000660";
-	String SamsungWo = "https://finance.naver.com/item/main.naver?code=005935";
-	String Naver = "https://finance.naver.com/item/main.naver?code=035420";
-	String SamsungBio = "https://finance.naver.com/item/main.naver?code=207940";
-	String LGChemical = "https://finance.naver.com/item/main.naver?code=051910";
-	String HyunDae = "https://finance.naver.com/item/main.naver?code=005380";
-	String SamsungSDI = "https://finance.naver.com/item/main.naver?code=006400";
-	String Kakao = "https://finance.naver.com/item/main.naver?code=035720";
 	
-	String[] kospi = {Samsung, LGEnerge, SkHynix, SamsungWo, Naver, SamsungBio, LGChemical, HyunDae, SamsungSDI, Kakao};
-	
-	private void kospi() {
-		
-				
-			testDao.deleteKospy();
-			for(String item : kospi) {
-				stockUpdate(item);
-			}
+	private void start() {
+		stock();
 	}
+	
+	private void stock() {
+		String Samsung = "https://finance.naver.com/item/main.naver?code=005930";
+		String LGEnerge = "https://finance.naver.com/item/main.naver?code=373220";
+		String SkHynix = "https://finance.naver.com/item/main.naver?code=000660";
+		String SamsungWo = "https://finance.naver.com/item/main.naver?code=005935";
+		String Naver = "https://finance.naver.com/item/main.naver?code=035420";
+		String SamsungBio = "https://finance.naver.com/item/main.naver?code=207940";
+		String LGChemical = "https://finance.naver.com/item/main.naver?code=051910";
+		String HyunDae = "https://finance.naver.com/item/main.naver?code=005380";
+		String SamsungSDI = "https://finance.naver.com/item/main.naver?code=006400";
+		String Kakao = "https://finance.naver.com/item/main.naver?code=035720";
+		String SeltHealth = "https://finance.naver.com/item/main.naver?code=091990";
+		String EchoPro = "https://finance.naver.com/item/main.naver?code=247540";
+		String PerAbis = "https://finance.naver.com/item/main.naver?code=263750";
+		String LNF = "https://finance.naver.com/item/main.naver?code=066970";
+		String KakaoGame = "https://finance.naver.com/item/main.naver?code=293490";
+		String HLB = "https://finance.naver.com/item/main.naver?code=028300";
+		String Wemade = "https://finance.naver.com/item/main.naver?code=112040";
+		String SeltDrug = "https://finance.naver.com/item/main.naver?code=068760";
+		String CheonBo = "https://finance.naver.com/item/main.naver?code=278280";
+		String CJENM = "https://finance.naver.com/item/main.naver?code=035760";
+		
+		
+		String[] stockArr = {Samsung, LGEnerge, SkHynix, SamsungWo, Naver, SamsungBio, LGChemical, HyunDae, SamsungSDI, Kakao,
+				SeltHealth, EchoPro, PerAbis, LNF, KakaoGame, HLB, Wemade, SeltDrug, CheonBo, CJENM};
+		
+		testDao.deleteStock("KOSPY");
+		testDao.deleteStock("KOSDAQ");
+		testDao.deleteStock("STOCK");
+		
+		for(int i = 0; i < stockArr.length; i++) {
+			stockUpdate(stockArr[i]);
+		}
+	}
+	
 	
 	
 	void stockUpdate(String url) {
@@ -78,22 +98,21 @@ public class Service {
 		
 			
 			List<Object> param = new ArrayList<Object>();
-			param.add(StockName);
-			param.add(CurPrice);
-			param.add(StartPrice);
-			param.add(BefPrice);
-			param.add(HighPrice);
-			param.add(LowPrice);
-			param.add(Compare);
-			param.add(TotalVol);
-			param.add(TotalPrice);
-			param.add(MarketTotal);
 			param.add(StockClass[0]);
+			param.add(StockName);
+			param.add(Integer.parseInt(CurPrice.replace(",", "")));
+			param.add(Integer.parseInt(StartPrice.replace(",", "")));
+			param.add(Integer.parseInt(BefPrice.replace(",", "")));
+			param.add(Integer.parseInt(Compare.replace(",", "")));
+			param.add(Integer.parseInt(HighPrice.replace(",", "")));
+			param.add(Integer.parseInt(LowPrice.replace(",", "")));
+			param.add(Integer.parseInt(TotalVol.replace(",", "")));
+			param.add(Integer.parseInt(TotalPrice.replace(",", "")));
+			param.add(MarketTotal);
 
-			
-			
+
 		
-			int insertSuccess = testDao.insertKospy(param);
+			int insertSuccess = testDao.insertStock(param);
 			
 			if(insertSuccess != 0) {
 				System.out.println("업데이트 성공");
@@ -101,19 +120,6 @@ public class Service {
 				System.out.println("업데이트 실패");
 			}
 
-//			
-//			System.out.print("종목명:" + StockName);
-//			System.out.print("\t현재가격:" + CurPrice);
-//			System.out.print("\t시가:" + StartPrice);
-//			System.out.print("\t전일:" + BefPrice);
-//			System.out.print("\t고가:" + HighPrice);
-//			System.out.println("\t저가:" + LowPrice);
-//			System.out.print("전일대비:" + Compare);
-//			System.out.print("\t거래량:" + TotalVol);
-//			System.out.print("\t거래대금:" + TotalPrice);
-//			System.out.println("\t시가총액:" + MarketTotal);
-//			System.out.println("분류:" + StockClass[0]);
-//			System.out.println("----------------------------------------------------------------------------------------------------");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
