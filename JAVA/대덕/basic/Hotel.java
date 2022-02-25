@@ -32,9 +32,9 @@ public class Hotel {
 
 	private void start() {
 		while(true) {			
-			System.out.println("==================================");
+			System.out.println("======================================");
 			System.out.println("\t호텔문을 열었습니다. 어서오세요.");
-			System.out.println("==================================");
+			System.out.println("======================================");
 			System.out.println();
 			System.out.println();
 			System.out.println("----------------------------------");
@@ -58,12 +58,29 @@ public class Hotel {
 	}
 	
 	private void checkOut() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("------------------------------");
+		System.out.println("체크아웃 작업");
+		System.out.println("------------------------------");
+		System.out.println("201~209 : 싱글룸");
+		System.out.println("301~309 : 더블룸");
+		System.out.println("401~409 : 스위트룸");
+		System.out.println("------------------------------");
+		System.out.print("방 번호 입력 => ");
+		int roomNum = s.nextInt();
+		s.nextLine();
+		if(!roomMap.containsKey(roomNum)) {
+			System.out.println(roomNum + "호 객실은 존재하지 않습니다.");
+		}else {			
+			if(roomMap.get(roomNum).getUser() == "-") {
+				System.out.println(roomNum + "호 객실은 체크인 한 사람이 없습니다. ");
+			}else {
+				System.out.println(roomNum + "호 객실의 " + roomMap.get(roomNum).getUser() + "님 체크아웃을 완료하였습니다.");
+				roomMap.remove(roomNum);
+			}
+		}
 	}
 
 	private void checkIn() {
-		s.nextLine();
 		System.out.println("------------------------------");
 		System.out.println("체크인 작업");
 		System.out.println("------------------------------");
@@ -73,13 +90,18 @@ public class Hotel {
 		System.out.println("------------------------------");
 		System.out.print("방 번호 입력 => ");
 		int roomNum = s.nextInt();
-		if(roomMap.get(roomNum).getUser() != "-") {
-			System.out.println(roomNum + "호 객실은 이미 손님이 있습니다.");
-		}else {
-			System.out.print("체크인 하실 고객명을 입력해주세요 > ");
-			String user = s.nextLine();
-			roomMap.get(roomNum).setUser(user);
-			System.out.println(user + "님 체크인이 완료되었습니다.");
+		s.nextLine();
+		if(!roomMap.containsKey(roomNum)) {
+			System.out.println(roomNum + "호 객실은 존재하지 않습니다.");
+		}else {			
+			if(roomMap.get(roomNum).getUser() != "-") {
+				System.out.println(roomNum + "호 객실은 이미 손님이 있습니다.");
+			}else {
+				System.out.print("체크인 하실 고객명을 입력해주세요 > ");
+				String user = s.nextLine();
+				roomMap.get(roomNum).setUser(user);
+				System.out.println(user + "님 체크인이 완료되었습니다.");
+			}
 		}
 	}
 
@@ -88,11 +110,13 @@ public class Hotel {
 		List<Integer> roomList = new ArrayList<>(roomSet);
 		Collections.sort(roomList);
 		
+		System.out.println("============================");
 		System.out.println("방 번호\t방 종류\t투숙객");
+		System.out.println("============================");
 		for(Integer roomNum : roomList) {
 			Room room = roomMap.get(roomNum);
 			System.out.println(room.num + "\t" + room.name + "\t" + room.user);
-			System.out.println("-------------------------------");
+			System.out.println("----------------------------");
 		}
 	}
 
