@@ -39,18 +39,9 @@ Today I Learned
    * [고차함수,생성자](https://github.com/jangmoonseok/TIL/blob/main/JS/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98%2C%EC%83%9D%EC%84%B1%EC%9E%90.md)
    * [Collection](https://github.com/jangmoonseok/TIL/blob/main/JS/Collection.md)
    * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
-### 문제풀이 
-* [반복문 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EB%B0%98%EB%B3%B5%EB%AC%B8.md)
-* [조건문 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)
-* [종합 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%A2%85%ED%95%A9.md)
-* [실전 문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
 
-## 수학이론
-* [알고리즘 기본 수학이론](https://github.com/jangmoonseok/TIL/blob/main/%EC%88%98%ED%95%99%EA%B8%B0%EB%B3%B8%EC%9D%B4%EB%A1%A0/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%88%98%ED%95%99%EC%9D%B4%EB%A1%A0.md)
-* [수학이론 기본문제풀이](https://github.com/jangmoonseok/TIL/blob/main/%EC%88%98%ED%95%99%EA%B8%B0%EB%B3%B8%EC%9D%B4%EB%A1%A0/%EA%B8%B0%EB%B3%B8%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
+## Java
 
-## 자료구조
-### 선형 자료구조
-* [배열](https://github.com/jangmoonseok/TIL/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EB%B0%B0%EC%97%B4.md)
-
-### 비선형 자료구조
+## 코딩테스트
+### 프로그래머스
+ * [Lv1]()
