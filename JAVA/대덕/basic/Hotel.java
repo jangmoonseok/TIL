@@ -17,7 +17,7 @@ public class Hotel {
 		int dob = 301;
 		int sweet = 401;
 
-		
+		//Map에 객실 만들기
 		for(int i = 0; i < 9; i++) {
 			roomMap.put(single, new Room(single, "싱글룸"));
 			roomMap.put(dob, new Room(dob, "더블룸"));
@@ -55,6 +55,7 @@ public class Hotel {
 				System.exit(0);
 			}
 		}
+		
 	}
 	
 	private void checkOut() {
@@ -67,15 +68,18 @@ public class Hotel {
 		System.out.println("------------------------------");
 		System.out.print("방 번호 입력 => ");
 		int roomNum = s.nextInt();
+		//Scanner.nextInt()를 사용하고나면 입력버퍼에 enter키값이 남아있다. nextLine()은 enter키값까지 받아가기때문에 입력하기 전에 nextLine()을 사용하여 초기화
 		s.nextLine();
 		if(!roomMap.containsKey(roomNum)) {
+			//입력한 방 번호가 존재하지 않을때
 			System.out.println(roomNum + "호 객실은 존재하지 않습니다.");
 		}else {			
 			if(roomMap.get(roomNum).getUser() == "-") {
+				//입력한 방에 손님이 없을때
 				System.out.println(roomNum + "호 객실은 체크인 한 사람이 없습니다. ");
 			}else {
 				System.out.println(roomNum + "호 객실의 " + roomMap.get(roomNum).getUser() + "님 체크아웃을 완료하였습니다.");
-				roomMap.remove(roomNum);
+				roomMap.get(roomNum).setUser("-");
 			}
 		}
 	}
@@ -90,11 +94,14 @@ public class Hotel {
 		System.out.println("------------------------------");
 		System.out.print("방 번호 입력 => ");
 		int roomNum = s.nextInt();
+		//Scanner.nextInt()를 사용하고나면 입력버퍼에 enter키값이 남아있다. nextLine()은 enter키값까지 받아가기때문에 입력하기 전에 nextLine()을 사용하여 초기화
 		s.nextLine();
 		if(!roomMap.containsKey(roomNum)) {
+			//입력한 방 번호가 존재하지 않을때
 			System.out.println(roomNum + "호 객실은 존재하지 않습니다.");
 		}else {			
 			if(roomMap.get(roomNum).getUser() != "-") {
+				//입력한 방에 손님이 있을때
 				System.out.println(roomNum + "호 객실은 이미 손님이 있습니다.");
 			}else {
 				System.out.print("체크인 하실 고객명을 입력해주세요 > ");
@@ -106,6 +113,9 @@ public class Hotel {
 	}
 
 	private void viewRoom() {
+		//Map과 Set은 index가 없으므로 순서가 정해져있지 않다 ==> 
+		//keySet을 생성해서 List에 넣어 방 번호를 오름차순으로 정렬 후 출력
+
 		Set<Integer> roomSet = roomMap.keySet();
 		List<Integer> roomList = new ArrayList<>(roomSet);
 		Collections.sort(roomList);

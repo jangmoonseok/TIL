@@ -1,6 +1,7 @@
 package kr.or.ddlt.basic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -87,6 +88,7 @@ public class SetTest {
 		for(int num : testList) {
 			System.out.println(num);
 		}
+		
 	}
 
 }

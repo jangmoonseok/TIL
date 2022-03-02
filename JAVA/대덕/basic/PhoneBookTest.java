@@ -84,10 +84,9 @@ public class PhoneBookTest {
 	}
 
 	private void searchPhone() {
-		s.nextLine();
 		System.out.println("[전화번호 검색]");
 		System.out.println("검색할 사람을 입력하세요 => ");
-		String name = s.nextLine();
+		String name = s.next();
 		if(!phoneBook.containsKey(name)) {
 			System.out.println("검색할 대상이 존재하지 않습니다.");
 			System.out.println();
@@ -102,10 +101,9 @@ public class PhoneBookTest {
 	}
 
 	private void deletePhone() {
-		s.nextLine();
 		System.out.println("[전화번호 삭제]");
 		System.out.println("삭제할 사람을 입력하세요 => ");
-		String name = s.nextLine();
+		String name = s.next();
 		if(!phoneBook.containsKey(name)) {
 			System.out.println("삭제할 대상이 존재하지 않습니다.");
 			System.out.println();
@@ -117,17 +115,17 @@ public class PhoneBookTest {
 	}
 
 	private void updatePhone() {
-		s.nextLine();
 		System.out.println("[전화번호 수정]");
 		System.out.println("수정할 사람을 입력하세요 => ");
-		String name = s.nextLine();
+		String name = s.next();
 		if(!phoneBook.containsKey(name)) {
 			System.out.println("존재하지 않는 이름입니다.");
 			System.out.println();
 		}else {			
 			System.out.println("수정할 번호 => ");
-			String tel = s.nextLine();
+			String tel = s.next();
 			System.out.println("수정할 주소 => ");
+			s.nextLine();
 			String add = s.nextLine();
 			phoneBook.put(name, new Phone(name,add,tel));
 			System.out.println(name + "의 정보가 수정되었습니다.");
@@ -136,13 +134,13 @@ public class PhoneBookTest {
 	}
 
 	private void addPhone() {
-		s.nextLine();
 		System.out.println("[전화번호 등록]");
 		System.out.println("등록할 이름 => ");
-		String name = s.nextLine();
+		String name = s.next();
 		System.out.println("등록할 번호 => ");
-		String tel = s.nextLine();
+		String tel = s.next();
 		System.out.println("등록할 주소 => ");
+		s.nextLine();
 		String add = s.nextLine();
 		if(phoneBook.containsKey(name)) {
 			System.out.println(name + "은 이미 등록된 정보입니다.");
@@ -153,6 +151,12 @@ public class PhoneBookTest {
 			System.out.println();
 		}
 	}
+	/*
+	 * Scanner객체의 입력 메서드의 특징
+	 *  - next(), nextInt(), nextDouble(),...등 ==> 사이띄기, Tab키, Enter키를 구분 문자로 분리해서 분리된 자료만 읽어간다.
+	 *  - nextLine() ==> 한 줄 단위로 입력한다. 즉, 자료를 입력하고 Enter키를 누르면 Enter키까지 읽어간다.
+	 *  - Scanner는 입력한 값이 입력버퍼에 먼저 저장된 후 차례로 꺼내와서 처리된다.
+	 */
 
 }
 

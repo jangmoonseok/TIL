@@ -32,7 +32,6 @@ public class BaseballTest {
 		int count = 0;
 		
 		
-		/* 방법(2) */
 		do {
 			strike = 0;
 			ball = 0;
