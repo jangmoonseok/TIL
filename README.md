@@ -41,7 +41,7 @@ Today I Learned
    * [Math,Date](https://github.com/jangmoonseok/TIL/blob/main/JS/Math%2CDate.md)
 
 ## Java
-  * [Collection](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/collectionTest/src/kr/or/ddlt/basic)
+  * [Collection](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/collection)
 
 ## 코딩테스트
 ### 프로그래머스
