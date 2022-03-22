@@ -104,4 +104,22 @@ public class MemberServiceImpl implements IMemberService{
 		return count;
 	}
 
+	@Override
+	public int updateMember2(String field, String data, String memId) {
+		Connection conn = null;
+		int result = 0;
+		
+		try {
+			conn = DBUtil3.getConnection();
+			
+			result = dao.updateMember2(conn, field, data, memId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn != null) try { conn.close(); } catch(SQLException e) {}
+		}
+		
+		return result;
+	}
+
 }

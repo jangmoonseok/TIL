@@ -64,4 +64,7 @@ public interface IMemberDao {
 	public int getMemberCount(Connection conn, String memId) throws SQLException;
 	
 	
+	public int updateMember2(Connection conn, String field, String data, String memId) throws SQLException;
+	
+	
 }

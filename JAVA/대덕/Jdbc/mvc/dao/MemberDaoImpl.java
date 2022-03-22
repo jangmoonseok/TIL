@@ -81,7 +81,6 @@ public class MemberDaoImpl implements IMemberDao{
 			memVo.setMem_tel(rs.getString("mem_tel"));
 			memVo.setMem_pass(rs.getString("mem_pass"));
 			memVo.setMem_name(rs.getString("mem_name"));
-			
 			list.add(memVo);
 		}
 		
@@ -110,5 +109,25 @@ public class MemberDaoImpl implements IMemberDao{
 		
 		return count;
 	}
+
+	@Override
+	public int updateMember2(Connection conn, String field, String data, String memId) throws SQLException {
+		int result = 0;
+		
+		String sql = "update mymember"
+				+ "		 set " + field + " = ?"
+				+ "    where mem_id = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, data);
+		pstmt.setString(2, memId);
+		
+		result = pstmt.executeUpdate();
+		
+		if(pstmt != null) pstmt.close();
+		
+		return result;
+	}
+
+
 
 }

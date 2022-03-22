@@ -55,4 +55,7 @@ public interface IMemberService {
 	 * @throws SQLException
 	 */
 	public int getMemberCount(String memId);
+	
+	
+	public int updateMember2(String field, String data, String memId);
 }
