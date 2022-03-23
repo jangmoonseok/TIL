@@ -3,6 +3,7 @@ package kr.or.ddit.basic.mvc.service;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ddit.basic.mvc.dao.IMemberDao;
 import kr.or.ddit.basic.mvc.dao.MemberDaoImpl;
@@ -10,13 +11,18 @@ import kr.or.ddit.basic.mvc.vo.MemberVO;
 import kr.or.ddit.util.DBUtil3;
 
 public class MemberServiceImpl implements IMemberService{
-	private IMemberDao dao;
+	private IMemberDao dao = MemberDaoImpl.getInstance();
+	private static IMemberService instance;
 	
+	private MemberServiceImpl() {}
+	
+	public static IMemberService getInstance() {
+		if(instance == null) instance = new MemberServiceImpl();
+		return instance;
+	}
 	
 
-	public MemberServiceImpl() {
-		dao = new MemberDaoImpl();
-	}
+
 
 	@Override
 	public int insertMember(MemberVO memVo) {
@@ -105,14 +111,14 @@ public class MemberServiceImpl implements IMemberService{
 	}
 
 	@Override
-	public int updateMember2(String field, String data, String memId) {
+	public int updateMember2(Map<String, String> paramMap) {
 		Connection conn = null;
 		int result = 0;
 		
 		try {
 			conn = DBUtil3.getConnection();
 			
-			result = dao.updateMember2(conn, field, data, memId);
+			result = dao.updateMember2(conn, paramMap);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

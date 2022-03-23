@@ -1,7 +1,9 @@
 package kr.or.ddit.basic.mvc.controller;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import kr.or.ddit.basic.mvc.service.IMemberService;
@@ -11,10 +13,9 @@ import kr.or.ddit.util.DBUtil;
 
 public class MemberController {
 	private Scanner sc = new Scanner(System.in);
-	private IMemberService service;
+	private IMemberService service = MemberServiceImpl.getInstance();
 	
 	public MemberController() {
-		service = new MemberServiceImpl();
 	}
 	
 	public static void main(String[] args) {
@@ -100,7 +101,12 @@ public class MemberController {
 		sc.nextLine();
 		data = sc.nextLine();
 		
-		result = service.updateMember2(field, data, memId);
+		Map<String, String> paramMap = new HashMap<String, String>();
+		paramMap.put("memId", memId);
+		paramMap.put("field", field);
+		paramMap.put("data", data);
+		
+		result = service.updateMember2(paramMap);
 		
 		if(result > 0) {
 			System.out.println("회원정보 수정 성공!");
@@ -111,7 +117,7 @@ public class MemberController {
 
 	private void readAllMember() {
 		System.out.println("----------------------------- 회원 정보 -----------------------------");
-		System.out.printf("%-10s%-10s%-15s%-10s", "회원ID", "회원이름", "전화번호", "주소");
+		System.out.printf("%-10s%-10s%-10s%-15s%-10s", "회원ID", "비밀번호", "회원이름", "전화번호", "주소");
 		System.out.println();
 		
 		List<MemberVO> list = service.getAllMember();
@@ -120,7 +126,7 @@ public class MemberController {
 			System.out.println("등록된 회원정보가 없습니다.");
 		}else {			
 			for(MemberVO member : list) {
-				System.out.printf("%-10s%-10s%-15s%-10s", member.getMem_id(), member.getMem_name(), member.getMem_tel(), member.getMem_addr());
+				System.out.printf("%-10s%-10s%-10s%-15s%-10s", member.getMem_id(), member.getMem_pass() , member.getMem_name(), member.getMem_tel(), member.getMem_addr());
 				System.out.println();
 			}
 		}

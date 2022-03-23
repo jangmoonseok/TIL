@@ -6,10 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ddit.basic.mvc.vo.MemberVO;
 
 public class MemberDaoImpl implements IMemberDao{
+	private static IMemberDao instance;
+	
+	private MemberDaoImpl() {}
+	
+	public static IMemberDao getInstance() {
+		if(instance == null) instance = new MemberDaoImpl();
+		return instance;
+	} 
 
 	@Override
 	public int insertMember(Connection conn, MemberVO memVo) throws SQLException {
@@ -111,15 +120,15 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public int updateMember2(Connection conn, String field, String data, String memId) throws SQLException {
+	public int updateMember2(Connection conn, Map<String, String> paramMap) throws SQLException {
 		int result = 0;
 		
 		String sql = "update mymember"
-				+ "		 set " + field + " = ?"
+				+ "		 set " + paramMap.get("field") + " = ?"
 				+ "    where mem_id = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, data);
-		pstmt.setString(2, memId);
+		pstmt.setString(1, paramMap.get("data"));
+		pstmt.setString(2, paramMap.get("memId"));
 		
 		result = pstmt.executeUpdate();
 		
