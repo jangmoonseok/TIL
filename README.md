@@ -46,6 +46,7 @@ Today I Learned
   * [I/O](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/javaIO)
   * [NetWork](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/NetWork)
   * [JDBC](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/Jdbc)
+  * [iBatis](https://github.com/jangmoonseok/TIL/tree/main/JAVA/%EB%8C%80%EB%8D%95/iBatisTest)
 
 ## 코딩테스트
 ### 프로그래머스
