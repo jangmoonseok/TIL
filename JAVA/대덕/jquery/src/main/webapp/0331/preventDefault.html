@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(function(){
+	$('a').click(function(){
+		age = parseInt(prompt("나이를 입력하세요"));
+	
+		if(age < 15){
+			event.preventDefault();
+			alert("접근 금지입니다");
+		}
+	})
+})
+</script>
+<style type="text/css">
+pre{
+	border: 1px solid pink;
+}
+
+</style>
+</head>
+<body>
+
+<div id="box">
+	<pre>
+		event.preventDefault() : html요소의 고유 기능을 수행하지 않도록 한다
+	</pre>
+	<a href="http://www.naver.com">네이버</a>
+</div>
+</body>
+</html>
