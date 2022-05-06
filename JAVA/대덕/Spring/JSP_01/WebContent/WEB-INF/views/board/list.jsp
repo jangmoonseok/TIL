@@ -41,6 +41,7 @@
 				}else{
 			%>
 			<button type="button" onclick="location.href = 'boardRegist'" style="display:block;float:right;">글 등록</button>				
+			<button type="button" onclick="location.href = 'logout'" style="display:block;float:right;">로그아웃</button>
 			<%
 				}
 			%>
