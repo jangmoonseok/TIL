@@ -1,6 +1,7 @@
 package com.servlet.test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class BoardRegistServlet extends HttpServlet {
        
 
 	private DataSource dataSource = DataSource.getInstance();
+	private int bno = 20;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/views/board/boardRegist.jsp").forward(request, response);
@@ -37,7 +39,6 @@ public class BoardRegistServlet extends HttpServlet {
 		
 		Map<String, Board> boardList = dataSource.getBoardList();
 		Board board = new Board();
-		int bno = boardList.size();
 		board.setBno(bno);
 		board.setTitle(title);
 		board.setContent(content);
@@ -46,6 +47,7 @@ public class BoardRegistServlet extends HttpServlet {
 		board.setRegDate(new Date());
 		
 		boardList.put(""+bno, board);
+		bno++;
 		response.sendRedirect(request.getContextPath() + "/board/list");
 		
 		
