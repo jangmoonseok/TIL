@@ -41,7 +41,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		memberList.put(id, newMember);
 		
 	
-		response.sendRedirect(request.getContextPath() + "/member/list");
+		response.sendRedirect(request.getContextPath() + "/member/detail?id=" + id);
 	}
 
 	

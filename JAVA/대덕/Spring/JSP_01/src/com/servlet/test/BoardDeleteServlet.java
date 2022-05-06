@@ -10,24 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsp.dataSource.DataSource;
-import com.jsp.vo.Member;
+import com.jsp.vo.Board;
 
 /**
- * Servlet implementation class MemberDetailServlet
+ * Servlet implementation class BoardDeleteServlet
  */
-@WebServlet("/member/detail")
-public class MemberDetailServlet extends HttpServlet {
+@WebServlet("/board/boardDelete")
+public class BoardDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	private DataSource dataSource = DataSource.getInstance(); 
+
+	private DataSource dataSource = DataSource.getInstance();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		Map<String, Member> memberList = dataSource.getMemberList();
-		Member member = memberList.get(id);
-		request.setAttribute("member", member);
+		String bno = request.getParameter("boardNum");
+		Map<String, Board> boardList = dataSource.getBoardList();
+		boardList.remove(bno);
 		
-		request.getRequestDispatcher("/WEB-INF/views/member/detail.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/board/list");
 	}
+
 
 
 }
