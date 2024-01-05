@@ -21,8 +21,10 @@ class UncheckedExceptionClass2{
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
-			return num;
+			num = 1;
 		}
+		
+		return num;
 		/**
 		 * 예외 처리를 하지 않음
 		 * 상위 메소드에 예외 처리 책임을 위임함으로써 상위 메소드가 예외 처리를 하지 않으면 다음 로직이 실행되지 않는다.
