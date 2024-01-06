@@ -1,4 +1,4 @@
-package exp.unchecked;
+package exp.example;
 
 public class UncheckedExceptionExample2 {
 	public static void main(String[] args) {
