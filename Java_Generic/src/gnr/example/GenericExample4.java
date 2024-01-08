@@ -1,17 +1,34 @@
 package gnr.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenericExample4 {
 
 	public static void main(String[] args) {
+		BoardMapper<Board> boardMapper = new BoardMapper<>();
 		
+		Recipe recipe = new Recipe("볶음밥 레시피", "내용....");
+		Diary diary = new Diary("오늘의 일기", "내용...");
+		
+		List<Board> list = boardMapper.select();
+		
+		list.add(recipe);
+		list.add(diary);
+		
+		System.out.println(list.toString());
 	}
 }
 
 class Board{
 	private String title;
 	private String content;
+	
+	public Board(String title, String content) {
+		super();
+		this.title = title;
+		this.content = content;
+	}
 	
 	public String getTitle() {
 		return title;
@@ -31,26 +48,52 @@ class Board{
 
 class Recipe extends Board{
 
-	public Recipe() {
-		super();
+	public Recipe(String title, String content) {
+		super(title, content);
 	}
 	
 }
 
 class Diary extends Board{
 
-	public Diary() {
-		super();
+	public Diary(String title, String content) {
+		super(title, content);
 	}
 	
 }
 
-class BoardMapper{
+class BoardMapper<T extends Board>{
+	private List<T> list;
 	
-//	<T extends Board> List<T> select(){
-//		
-//	};
-//	
-//	<T extends Board> void insert(List<T> list, T e);
+	
+	public BoardMapper() {
+		list = new ArrayList<>();
+	}
+
+	List<T> select(){
+		return list;
+	};
+	
+	void insert(List<T> list, T e) {
+		list.add(e);
+	};
+	
+	List<Recipe> selectRecipe(){
+		// ..요리 레시피 조회
+		return null;
+	}
+	
+	List<Diary> selectDiary(){
+		// ..다이어리 조회
+		return null;
+	}
+	
+	void insertRecipe(Recipe recipe) {
+		// ..요리 레시피 등록
+	}
+	
+	void insertDiary(Diary diary) {
+		// ..다이어리 등록
+	}
 }
 
