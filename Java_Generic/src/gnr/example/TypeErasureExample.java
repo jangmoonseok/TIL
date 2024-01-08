@@ -4,37 +4,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 // 치환 전
-public class TypeErasureExample<T> {
+public class TypeErasureExample<T extends Number> {
 
-	private List<T> array;
+	private List<T> list;
 
 	public TypeErasureExample() {
-		array = new ArrayList<T>();
+		list = new ArrayList<T>();
 	}
 	
 	void add(T element) {
-		array.add(element);
+		list.add(element);
 	}
 	
-	List<T> getAll() {
-		return array;
+	T getValue(int i) {
+		return list.get(i);
+	}
+	
+	public static void main(String[] args) {
+		TypeErasureExample<Integer> example = new TypeErasureExample<>();
+		example.add(1);
+		example.add(2);
+		example.add(3);
+		
+		Integer value1 = example.getValue(1);
+		
+		TypeErasureExample1 example1 = new TypeErasureExample1();
+//		example1.add("String"); 컴파일 오류
+		example1.add(1);
+		example1.add(2);
+		example1.add(3);
+		
+		Integer value2 = example.getValue(1);
+		
+		System.out.println(value1);
+		System.out.println(value2);
+		
+		
 	}
 }
 
 // 치환 후
-//public class TypeErasureExample {
-//
-//	private List array;
-//
-//	public TypeErasureExample() {
-//		array = new ArrayList();
-//	}
-//	
-//	void add(Object element) {
-//		array.add(element);
-//	}
-//	
-//	List getAll() {
-//		return array;
-//	}
-//}
+class TypeErasureExample1{
+
+	private List list;
+
+	public TypeErasureExample1() {
+		list = new ArrayList();
+	}
+	
+	void add(Number element) {
+		list.add(element);
+	}
+	
+	Number getValue(int i) {
+		return (Number)list.get(i);
+	}
+}
+

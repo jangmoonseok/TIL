@@ -70,12 +70,13 @@ class BoardMapper<T extends Board>{
 		list = new ArrayList<>();
 	}
 
-	List<T> select(){
-		return list;
+	<T extends Board> List<T> selectBoard(){
+		// ..게시판 조회
+		return null;
 	};
 	
-	void insert(List<T> list, T e) {
-		list.add(e);
+	<T extends Board>void insertBoard(T e) {
+		// ..게시판 등록
 	};
 	
 	List<Recipe> selectRecipe(){
