@@ -11,7 +11,7 @@ public class GenericExample4 {
 		Recipe recipe = new Recipe("볶음밥 레시피", "내용....");
 		Diary diary = new Diary("오늘의 일기", "내용...");
 		
-		List<Board> list = boardMapper.select();
+		List<Board> list = boardMapper.selectBoard();
 		
 		list.add(recipe);
 		list.add(diary);
