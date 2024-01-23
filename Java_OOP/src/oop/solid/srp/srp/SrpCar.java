@@ -21,17 +21,17 @@ public class SrpCar {
 	}
 	
 	public void drive(double distance) {
-		System.out.println(distance + "km¸¦ ÁÖÇàÇß½À´Ï´Ù.");
+		System.out.println(distance + "kmï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 		fuelSystem.consumeFuel(distance, consumeRate);
 	}
 	
 	public void refillFuel(int money) {
-		System.out.println(money + "¿ø¾îÄ¡ ¿¬·á¸¦ ÃæÀüÇÕ´Ï´Ù.");
+		System.out.println(money + "ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½á¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 		fuelSystem.refillFuel(money, refillRate);
 	}
 	
 	public void displayCarInfo() {
-		System.out.println(make + " " + model + "| ¿¬·á: " + fuelSystem.getFuelPercentage() + "%");
+		System.out.println(make + " " + model + "| ï¿½ï¿½ï¿½ï¿½: " + fuelSystem.getFuelPercentage() + "%");
 	}
 	
 }
