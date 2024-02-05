@@ -1,4 +1,4 @@
-package hellojpa;
+package hellojpa.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
