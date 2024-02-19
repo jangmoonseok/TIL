@@ -1,6 +1,10 @@
 package hellojpa;
 
+import java.util.Date;
+
 import hellojpa.entity.Member;
+import hellojpa.entity.Order;
+import hellojpa.entity.OrderStatus;
 import jakarta.persistence.*;
 
 public class JpaMain {
@@ -15,11 +19,20 @@ public class JpaMain {
         tx.begin();
         
         try {
-        	Member member = em.find(Member.class, 1L);
         	
-        	System.out.println("member.id :" + member.getId());
-        	System.out.println("member.name :" + member.getName());
-			
+        	Member member = new Member();
+        	member.setName("memberA");
+        	member.setCity("Seoul");
+        	member.setStreet("aaaa");
+        	member.setZipcode("bbbb");
+        	
+        	Order order = new Order();
+        	order.setMember(member);
+        	order.setOrderDate(new Date());
+        	order.setOrderStatus(OrderStatus.ORDER);
+        	
+        	em.persist(order);
+        	
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
