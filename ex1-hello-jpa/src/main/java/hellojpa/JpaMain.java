@@ -19,21 +19,21 @@ public class JpaMain {
         tx.begin();
         
         try {
-        	
-        	Member member = new Member();
-        	member.setName("memberA");
-        	member.setCity("Seoul");
-        	member.setStreet("aaaa");
-        	member.setZipcode("bbbb");
-        	
-        	Order order = new Order();
-        	order.setMember(member);
-        	order.setOrderDate(new Date());
-        	order.setOrderStatus(OrderStatus.ORDER);
-        	
-        	em.persist(order);
-        	
-			tx.commit();
+//        	
+//        	Member member = new Member();
+//        	member.setName("memberA");
+//        	member.setCity("Seoul");
+//        	member.setStreet("aaaa");
+//        	member.setZipcode("bbbb");
+//        	
+//        	Order order = new Order();
+//        	order.setMember(member);
+//        	order.setOrderDate(new Date());
+//        	order.setOrderStatus(OrderStatus.ORDER);
+//        	
+//        	em.persist(order);
+//        	
+//			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			tx.rollback();
