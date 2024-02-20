@@ -34,11 +34,11 @@ public class Order {
 	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "member_id")
 	private Member member;
 	
-	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER ,orphanRemoval = true)
 	private List<OrderItem> orderItems = new ArrayList<>();
 
 	public Long getId() {
@@ -71,6 +71,15 @@ public class Order {
 
 	public void setMember(Member member) {
 		this.member = member;
+	}
+	
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void addOrderItems(OrderItem orderItem) {
+		this.orderItems.add(orderItem);
+		orderItem.setOrder(this);
 	}
 	
 	
