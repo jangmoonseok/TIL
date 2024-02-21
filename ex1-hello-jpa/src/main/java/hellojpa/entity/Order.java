@@ -34,6 +34,10 @@ public class Order {
 	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus;
 	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "delivery_id")
+	private Delivery delivery;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "member_id")
 	private Member member;

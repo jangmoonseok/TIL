@@ -1,6 +1,7 @@
 package hellojpa.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,11 +19,8 @@ public class Member {
 	@Column(name = "member_name")
 	private String name;
 	
-	private String city;
-	
-	private String street;
-	
-	private String zipcode;
+	@Embedded
+	private Address homeAddress;
 
 	public Member() {}
 	
@@ -47,29 +45,15 @@ public class Member {
 		this.name = name;
 	}
 
-	public String getCity() {
-		return city;
+	public Address getHomeAddress() {
+		return homeAddress;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setHomeAddress(Address homeAddress) {
+		this.homeAddress = homeAddress;
 	}
 
-	public String getStreet() {
-		return street;
-	}
 
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
 
 	
 	
