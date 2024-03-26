@@ -1,13 +1,17 @@
 package hellojpa;
 
 import java.util.Date;
+import java.util.List;
 
 import hellojpa.entity.Book;
+import hellojpa.entity.EnterpriseInfo;
+import hellojpa.entity.EnterpriseUser;
 import hellojpa.entity.Item;
 import hellojpa.entity.Member;
 import hellojpa.entity.Order;
 import hellojpa.entity.OrderItem;
 import hellojpa.entity.OrderStatus;
+import hellojpa.entity.Song;
 import jakarta.persistence.*;
 
 public class JpaMain {
@@ -22,11 +26,15 @@ public class JpaMain {
         tx.begin();
         
         try {
-        	//즉시로딩을 통해 OrderItem까지 한번에 조회
-        	Order findOrder = em.find(Order.class, 1L);
-        	//지연로딩을 통해 조회
-        	System.out.println(findOrder.getMember().getName());
-//        	System.out.println(findOrder.getOrderItems().get(0).getItem().getName());
+        	EnterpriseInfo enterpriseInfo = em.find(EnterpriseInfo.class, 1L);
+        	System.out.println(enterpriseInfo.toString());
+        	
+//        	EnterpriseUser enterpriseUser = em.find(EnterpriseUser.class, 1L);
+//        	System.out.println(enterpriseUser.toString());
+        	
+        	
+        	
+        	
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

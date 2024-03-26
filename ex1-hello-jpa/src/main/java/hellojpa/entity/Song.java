@@ -19,7 +19,7 @@ public class Song {
 	@Column(name = "song_name")
 	private String songName;
 	
-	@ManyToOne //Song임장에서  Album과 관계가 N:1 
+	@ManyToOne(fetch = FetchType.LAZY) //Song임장에서  Album과 관계가 N:1 
 	@JoinColumn(name="album_id", nullable = false) //nullable = false 는 연관관계 조회시 inner join
 	private Album album;
 	
