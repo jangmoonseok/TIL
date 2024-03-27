@@ -1,10 +1,13 @@
 package hellojpa.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,11 +19,14 @@ public class Member {
 	@Column(name = "member_id")
 	private Long id;
 	
-	@Column(name = "member_name")
+	@Column(name = "member_name", unique = true)
 	private String name;
 	
 	@Embedded
 	private Address homeAddress;
+	
+	@OneToOne(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Locker locker;
 
 	public Member() {}
 	
@@ -51,6 +57,15 @@ public class Member {
 
 	public void setHomeAddress(Address homeAddress) {
 		this.homeAddress = homeAddress;
+	}
+
+	public Locker getLocker() {
+		return locker;
+	}
+
+	public void setLocker(Locker locker) {
+		this.locker = locker;
+		locker.setMember(this);
 	}
 
 

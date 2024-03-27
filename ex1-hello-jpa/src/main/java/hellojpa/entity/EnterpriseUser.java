@@ -18,7 +18,7 @@ public class EnterpriseUser {
 	@Column(name = "enterprise_user_id")
 	private Long id;
 	
-	@Column(name = "user_id")
+	@Column(name = "user_id", nullable = false, unique = true)
 	private String userId;
 	
 	@Column(name = "user_name")
@@ -57,6 +57,7 @@ public class EnterpriseUser {
 
 	public void setEnterpriseInfo(EnterpriseInfo enterpriseInfo) {
 		this.enterpriseInfo = enterpriseInfo;
+		enterpriseInfo.setUser(this);
 	}
 	
 	

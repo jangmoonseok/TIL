@@ -7,6 +7,7 @@ import hellojpa.entity.Book;
 import hellojpa.entity.EnterpriseInfo;
 import hellojpa.entity.EnterpriseUser;
 import hellojpa.entity.Item;
+import hellojpa.entity.Locker;
 import hellojpa.entity.Member;
 import hellojpa.entity.Order;
 import hellojpa.entity.OrderItem;
@@ -26,11 +27,32 @@ public class JpaMain {
         tx.begin();
         
         try {
-        	EnterpriseInfo enterpriseInfo = em.find(EnterpriseInfo.class, 1L);
-        	System.out.println(enterpriseInfo.toString());
+//        	Locker locker = new Locker();
+//        	locker.setName("라커A");
+//        	
+//        	Member member = new Member();
+//        	member.setName("회원A");
+//        	member.setLocker(locker);
+//        	
+//        	em.persist(member);
         	
-//        	EnterpriseUser enterpriseUser = em.find(EnterpriseUser.class, 1L);
-//        	System.out.println(enterpriseUser.toString());
+        	// pk를 외래키로 일대일 양방향 매핑시
+        	System.out.println("=====find Locker start=====");
+        	Locker locker = em.find(Locker.class, 1L);
+        	Member member = locker.getMember();
+        	System.out.println(member.getClass());
+        	System.out.println("=====find Locker end=====");
+        	System.out.println("=====find member start=====");
+        	System.out.println("memberName : " + member.getName());
+        	System.out.println("=====find member end=====");
+        	
+        	
+//        	System.out.println("=====find Locker start=====");
+//        	Locker locker = em.find(Locker.class, 1L);
+//        	System.out.println("=====find Locker end=====");
+//        	Member member = locker.getMember();
+//        	System.out.println("memberName : " + member.getName());
+//        	System.out.println("=====find member end=====");
         	
         	
         	
